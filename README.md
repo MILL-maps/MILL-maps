@@ -1,5 +1,4 @@
-# Memory and Ideology in the Linguistic Landscape (MILL)
-Commemorative (re)naming in East Germany and Poland 1916-2018
+# Commemorative (re)naming in East Germany and Poland 1916-2018
 
 <H3> Poland </H3>
 <a href="http://mill.wa.amu.edu.pl">http://mill.wa.amu.edu.pl</a>
