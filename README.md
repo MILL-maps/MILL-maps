@@ -1,13 +1,13 @@
-<h3 align="center"><img src="http://mill.wa.amu.edu.pl/sites/default/files/G_Fabiszak_baner_ulice_b.jpg" /></h3>
+# Commemorative (re)naming in East Germany and Poland 1916-2018
 
-# <a href="http://mill.wa.amu.edu.pl">Poland</a>
+<h4><a href="http://mill.wa.amu.edu.pl">Poland</h4></a>
 <ul>
   <li><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet">Poznań (Leaflet simple)</a></li>
   <li><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+">Poznań (Leaflet plus!)</a></li>
   <li> Poland map (to follow)</li>
 </ul>
 
-# <a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php">Germany</a>
+<h4><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php">Germany</h4></a>
 <ul>
   <li><a href="https://mill-maps.github.io/Leipzig_Leaflet">Leipzig Leaflet</a></li>
   <li><a href="https://mill-maps.github.io/Leipzig_Mapbox">Leipzig Mapbox</a></li>
