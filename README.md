@@ -1,6 +1,6 @@
 <h2>Commemorative (re)naming in Germany and Poland 1916-2018</h2>
 
-<table style="width:100%">
+<table class="center">
   <tr>
     <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php">Germany</a></h3></td>
     <td><h3><a href="http://mill.wa.amu.edu.pl">Poland</a></h3></td>
