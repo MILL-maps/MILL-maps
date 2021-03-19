@@ -1,4 +1,24 @@
+# Commemorative (re)naming in East Germany and Poland 1916-2018
+
 <h2>Commemorative (re)naming in East Germany and Poland 1916-2018</h2>
+<table style="width:100%">
+  <tr>
+    <th>Germany</th>
+    <th>Poland</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+  </tr>
+</table>
 
 <h3><a href="http://mill.wa.amu.edu.pl">Poland</a></h3>
 <ul>
