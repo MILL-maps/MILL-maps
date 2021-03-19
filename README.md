@@ -7,16 +7,16 @@
     <th><a href="http://mill.wa.amu.edu.pl">Poland</a></th>
   </tr>
   <tr>
-    <td>Jill</td>
-    <td>Smith</td>
+    <td><a href="https://mill-maps.github.io/Leipzig_Leaflet">Leipzig Leaflet</a></td>
+    <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet">Poznań (Leaflet simple)</a></td>
   </tr>
   <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
+    <td><a href="https://mill-maps.github.io/Leipzig_Mapbox">Leipzig Mapbox</a></td>
+    <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+">Poznań (Leaflet plus!)</td>
   </tr>
   <tr>
-    <td>John</td>
-    <td>Doe</td>
+    <td><a href="https://mill-maps.github.io/Leipzig_OpenLayers">Leipzig OpenLayers</a></td>
+    <td>Poland map (to follow)</td>
   </tr>
 </table>
 
