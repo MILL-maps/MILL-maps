@@ -1,10 +1,7 @@
-<H3 align="center">
- <img src="http://mill.wa.amu.edu.pl/sites/default/files/G_Fabiszak_baner_ulice_b.jpg" />
-</H3>
+<h3 align="center"><img src="http://mill.wa.amu.edu.pl/sites/default/files/G_Fabiszak_baner_ulice_b.jpg" /></h3>
 
 # Poland
-<H3> Poland </H3>
-<a href="http://mill.wa.amu.edu.pl">http://mill.wa.amu.edu.pl</a>
+<h2><a href="http://mill.wa.amu.edu.pl">http://mill.wa.amu.edu.pl</a></h2>
 <ul>
   <li><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet">Poznań (Leaflet simple)</a></li>
   <li><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+">Poznań (Leaflet plus!)</a></li>
@@ -12,8 +9,7 @@
 </ul>
 
 # Germany
-<H3> Germany </H3>
-<a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php">https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php</a>
+<h1><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php">https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php</a></h1>
 <ul>
   <li><a href="https://mill-maps.github.io/Leipzig_Leaflet">Leipzig Leaflet</a></li>
   <li><a href="https://mill-maps.github.io/Leipzig_Mapbox">Leipzig Mapbox</a></li>
