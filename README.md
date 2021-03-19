@@ -2,7 +2,7 @@
  <img src="http://mill.wa.amu.edu.pl/sites/default/files/G_Fabiszak_baner_ulice_b.jpg" />
 </h1>
 
-# Commemorative (re)naming in East Germany and Poland 1916-2018
+# Poland
 <H3> Poland </H3>
 <a href="http://mill.wa.amu.edu.pl">http://mill.wa.amu.edu.pl</a>
 <ul>
@@ -11,6 +11,7 @@
   <li> Poland map (to follow)</li>
 </ul>
 
+# Germany
 <H3> Germany </H3>
 <a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php">https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php</a>
 <ul>
