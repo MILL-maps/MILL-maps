@@ -11,10 +11,10 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/Leipzig_OpenLayers">Leipzig OpenLayers</a></td>
-    <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+">Poznań (Leaflet plus!)</td>
+    <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+">Poznań (Leaflet plus!)</a></td>
   </tr>
   <tr>
     <td><a href="https://arcg.is/0j8aXC">Leipzig ArcGIS online (TEST!)</a></td>
     <td> Poland map (to follow)</td>
   </tr>
-
+</table>
