@@ -1,6 +1,6 @@
-<h1 align="center">
+<H3 align="center">
  <img src="http://mill.wa.amu.edu.pl/sites/default/files/G_Fabiszak_baner_ulice_b.jpg" />
-</h1>
+</H3>
 
 # Poland
 <H3> Poland </H3>
