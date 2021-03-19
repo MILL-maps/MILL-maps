@@ -1,4 +1,6 @@
-# Commemorative (re)naming in East Germany and Poland 1916-2018
+# 
+
+<h2>Commemorative (re)naming in East Germany and Poland 1916-2018</h2>
 
 <h3><a href="http://mill.wa.amu.edu.pl">Poland</a></h3>
 <ul>
