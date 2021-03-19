@@ -1,6 +1,5 @@
-# Commemorative (re)naming in East Germany and Poland 1916-2018
+<h2>Commemorative (re)naming in  Germany and Poland 1916-2018</h2>
 
-<h2>Commemorative (re)naming in East Germany and Poland 1916-2018</h2>
 <table style="width:100%">
   <tr>
     <th><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php">Germany</a></th>
