@@ -1,4 +1,5 @@
 # Commemorative (re)naming in East Germany and Poland 1916-2018
+http://mill.wa.amu.edu.pl/sites/default/files/G_Fabiszak_baner_ulice_b.jpg
 
 <H3> Poland </H3>
 <a href="http://mill.wa.amu.edu.pl">http://mill.wa.amu.edu.pl</a>
