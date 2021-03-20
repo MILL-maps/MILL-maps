@@ -1,5 +1,5 @@
 <style> img { max-width: 60%; height: auto; filter: grayscale(70%);} </style>
-<img src="http://mill.wa.amu.edu.pl/sites/default/files/G_Fabiszak_baner_ulice_b.jpg">
+<img src="https://mill-maps.github.io/G_Fabiszak_baner_ulice_b.jpg">
       
 <h2>Commemorative (re)naming in Germany and Poland 1916-2018</h2>
 
