@@ -1,0 +1,22 @@
+<PAMDataset>
+  <SRS>PROJCS["Germany_Zone_4",GEOGCS["GCS_Deutsches_Hauptdreiecksnetz",DATUM["D_Deutsches_Hauptdreiecksnetz",SPHEROID["Bessel_1841",6377397.155,299.1528128]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["False_Easting",4500000.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",12.0],PARAMETER["Scale_Factor",1.0],PARAMETER["Latitude_Of_Origin",0.0],UNIT["Meter",1.0],AUTHORITY["EPSG","31494"]]</SRS>
+  <GeoTransform>  4.5704705268548271e+06,  4.0231494509997229e-01,  0.0000000000000000e+00,  5.6053411086251438e+06,  0.0000000000000000e+00, -4.0229106605024195e-01</GeoTransform>
+  <Metadata domain="IMAGE_STRUCTURE">
+    <MDI key="INTERLEAVE">PIXEL</MDI>
+  </Metadata>
+  <Metadata>
+    <MDI key="AREA_OR_POINT">Area</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <NoDataValue>0.00000000000000E+00</NoDataValue>
+  </PAMRasterBand>
+  <PAMRasterBand band="2">
+    <NoDataValue>0.00000000000000E+00</NoDataValue>
+  </PAMRasterBand>
+  <PAMRasterBand band="3">
+    <NoDataValue>0.00000000000000E+00</NoDataValue>
+  </PAMRasterBand>
+  <PAMRasterBand band="4">
+    <NoDataValue>0.00000000000000E+00</NoDataValue>
+  </PAMRasterBand>
+</PAMDataset>
