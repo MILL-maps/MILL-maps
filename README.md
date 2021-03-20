@@ -17,4 +17,8 @@
     <td><a href="https://arcg.is/0j8aXC">Leipzig ArcGIS online (TEST!)</a></td>
     <td> Poland map (to follow)</td>
   </tr>
+  <tr>
+    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST">Annaberg-Bucholtz (TEST!)</a></td>
+    <td> Poland map (to follow)</td>
+  </tr>
 </table>
