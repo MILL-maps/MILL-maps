@@ -10,19 +10,19 @@
     <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet">Poznań (Leaflet simple)</a></td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/Leipzig_OpenLayers">Leipzig OpenLayers</a></td>
+    <td><a href="https://arcg.is/0j8aXC">Leipzig ArcGIS online (TEST!)</a></td>
     <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+">Poznań (Leaflet plus!)</a></td>
   </tr>
   <tr>
-    <td><a href="https://arcg.is/0j8aXC">Leipzig ArcGIS online (TEST!)</a></td>
+    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST">Annaberg-Buchholz (Lines+Scan)</a></td>
     <td> Poland map (to follow)</td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST">Annaberg-Buchholz (Simple+BG)</a></td>
+    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex">Annaberg-Buchholz (Very complex)</a></td>
     <td> Poland map (to follow)</td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex">Annaberg-Buchholz (Complex!!)</a></td>
+    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Ideo_splil">Annaberg-Buchholz (Ideo split)</a></td>
     <td> Poland map (to follow)</td>
   </tr>
 </table>
