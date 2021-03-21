@@ -18,11 +18,11 @@
     <td> Poland map (to follow)</td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex">Annaberg-Buchholz (Very complex)</a></td>
+    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_LAUD-GAL">Annaberg-Buchholz (LAUD & GAL)</a></td>
     <td> Poland map (to follow)</td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Ideo_splil">Annaberg-Buchholz (Ideo split)</a></td>
+    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex">Annaberg-Buchholz (Very complex)</a></td>
     <td> Poland map (to follow)</td>
   </tr>
 </table>
