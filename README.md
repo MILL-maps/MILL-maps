@@ -11,11 +11,11 @@
   </tr>
   <tr>
     <td><a href="https://arcg.is/0j8aXC">Leipzig ArcGIS online (TEST!)</a></td>
-    <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+">Poznań (Leaflet plus!)</a></td>
+    <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+">Poznań (Leaflet menu)</a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST">Annaberg-Buchholz (Lines+Scan)</a></td>
-    <td> Poland map (to follow)</td>
+    <td><a href="Poznan_zeros_Leaflet_complex">Poznań (Leaflet Complex)</a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Int-LAUD-GAL">Annaberg-Buchholz (LAUD & GAL)</a></td>
