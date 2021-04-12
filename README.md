@@ -23,6 +23,6 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td><a href="https://www.dropbox.com/sh/..." target="_blank">Poznań Renamings only (png)</a></td>
+    <td>Poznań Renamings only (coming soon!)</a></td>
   </tr>
 </table>
