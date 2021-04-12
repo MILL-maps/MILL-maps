@@ -19,10 +19,10 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Int-LAUD-GAL" target="_blank">Annaberg-Buchholz (LAUD & GAL)</a></td>
-    <td> Poland map (to follow)</td>
+    <td> Poznań Broad changes</td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td> Poland map (to follow)</td>
+    <td> Poznań Renamings only</td>
   </tr>
 </table>
