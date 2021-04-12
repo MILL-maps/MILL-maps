@@ -19,7 +19,7 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Int-LAUD-GAL" target="_blank">Annaberg-Buchholz (LAUD & GAL)</a></td>
-    <td><a href="https://mill-maps.github.io/Poznań_broad_changes_png" target="_blank">Poznań Broad changes</a></td>
+    <td><a href="https://mill-maps.github.io/Poznan_broad_changes_png" target="_blank">Poznań Broad changes</a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
