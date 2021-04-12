@@ -1,0 +1,1467 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/Broadchanges19181926_1.js"></script>
+        <script src="data/Broadchanges19271938_2.js"></script>
+        <script src="data/Broadchanges19391944_3.js"></script>
+        <script src="data/Broadchanges19451955_4.js"></script>
+        <script src="data/Broadchanges19561969_5.js"></script>
+        <script src="data/Broadchanges19701979_6.js"></script>
+        <script src="data/Broadchanges19801988_7.js"></script>
+        <script src="data/Broadchanges19892004_8.js"></script>
+        <script src="data/Broadchanges20052018_9.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        })
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+        }
+        map.createPane('pane_ESRIGraylight_0');
+        map.getPane('pane_ESRIGraylight_0').style.zIndex = 400;
+        var layer_ESRIGraylight_0 = L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRIGraylight_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_ESRIGraylight_0;
+        map.addLayer(layer_ESRIGraylight_0);
+        function pop_Broadchanges19181926_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tunnel'] !== null ? autolinker.link(feature.properties['tunnel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_type'] !== null ? autolinker.link(feature.properties['BROAD_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_Poznan_street_names 2018'] !== null ? autolinker.link(feature.properties['BROAD_Poznan_street_names 2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_DP changes (from 14.10.20 0043)'] !== null ? autolinker.link(feature.properties['BROAD_DP changes (from 14.10.20 0043)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2018'] !== null ? autolinker.link(feature.properties['BROAD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1918-1926'] !== null ? autolinker.link(feature.properties['BROAD_1918-1926'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1927-1938'] !== null ? autolinker.link(feature.properties['BROAD_1927-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1939-1944'] !== null ? autolinker.link(feature.properties['BROAD_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1945-1955'] !== null ? autolinker.link(feature.properties['BROAD_1945-1955'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1956-1969'] !== null ? autolinker.link(feature.properties['BROAD_1956-1969'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1970-1979'] !== null ? autolinker.link(feature.properties['BROAD_1970-1979'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1980-1988'] !== null ? autolinker.link(feature.properties['BROAD_1980-1988'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1989-2004'] !== null ? autolinker.link(feature.properties['BROAD_1989-2004'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2005-2018'] !== null ? autolinker.link(feature.properties['BROAD_2005-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_BROAD changes'] !== null ? autolinker.link(feature.properties['BROAD_BROAD changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_field_16'] !== null ? autolinker.link(feature.properties['BROAD_field_16'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Broadchanges19181926_1_0(feature) {
+            switch(String(feature.properties['BROAD_1918-1926'])) {
+                case '0':
+                    return {
+                pane: 'pane_Broadchanges19181926_1',
+                opacity: 1,
+                color: 'rgba(253,231,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Broadchanges19181926_1',
+                opacity: 1,
+                color: 'rgba(158,218,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Broadchanges19181926_1',
+                opacity: 1,
+                color: 'rgba(39,127,142,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Broadchanges19181926_1',
+                opacity: 1,
+                color: 'rgba(69,50,127,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Broadchanges19181926_1');
+        map.getPane('pane_Broadchanges19181926_1').style.zIndex = 401;
+        map.getPane('pane_Broadchanges19181926_1').style['mix-blend-mode'] = 'normal';
+        var layer_Broadchanges19181926_1 = new L.geoJson(json_Broadchanges19181926_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Broadchanges19181926_1',
+            layerName: 'layer_Broadchanges19181926_1',
+            pane: 'pane_Broadchanges19181926_1',
+            onEachFeature: pop_Broadchanges19181926_1,
+            style: style_Broadchanges19181926_1_0,
+        });
+        bounds_group.addLayer(layer_Broadchanges19181926_1);
+        map.addLayer(layer_Broadchanges19181926_1);
+        function pop_Broadchanges19271938_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tunnel'] !== null ? autolinker.link(feature.properties['tunnel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_type'] !== null ? autolinker.link(feature.properties['BROAD_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_Poznan_street_names 2018'] !== null ? autolinker.link(feature.properties['BROAD_Poznan_street_names 2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_DP changes (from 14.10.20 0043)'] !== null ? autolinker.link(feature.properties['BROAD_DP changes (from 14.10.20 0043)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2018'] !== null ? autolinker.link(feature.properties['BROAD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1918-1926'] !== null ? autolinker.link(feature.properties['BROAD_1918-1926'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1927-1938'] !== null ? autolinker.link(feature.properties['BROAD_1927-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1939-1944'] !== null ? autolinker.link(feature.properties['BROAD_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1945-1955'] !== null ? autolinker.link(feature.properties['BROAD_1945-1955'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1956-1969'] !== null ? autolinker.link(feature.properties['BROAD_1956-1969'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1970-1979'] !== null ? autolinker.link(feature.properties['BROAD_1970-1979'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1980-1988'] !== null ? autolinker.link(feature.properties['BROAD_1980-1988'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1989-2004'] !== null ? autolinker.link(feature.properties['BROAD_1989-2004'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2005-2018'] !== null ? autolinker.link(feature.properties['BROAD_2005-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_BROAD changes'] !== null ? autolinker.link(feature.properties['BROAD_BROAD changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_field_16'] !== null ? autolinker.link(feature.properties['BROAD_field_16'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Broadchanges19271938_2_0(feature) {
+            switch(String(feature.properties['BROAD_1927-1938'])) {
+                case '0':
+                    return {
+                pane: 'pane_Broadchanges19271938_2',
+                opacity: 1,
+                color: 'rgba(253,231,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Broadchanges19271938_2',
+                opacity: 1,
+                color: 'rgba(158,218,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Broadchanges19271938_2',
+                opacity: 1,
+                color: 'rgba(39,127,142,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Broadchanges19271938_2',
+                opacity: 1,
+                color: 'rgba(69,50,127,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Broadchanges19271938_2');
+        map.getPane('pane_Broadchanges19271938_2').style.zIndex = 402;
+        map.getPane('pane_Broadchanges19271938_2').style['mix-blend-mode'] = 'normal';
+        var layer_Broadchanges19271938_2 = new L.geoJson(json_Broadchanges19271938_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Broadchanges19271938_2',
+            layerName: 'layer_Broadchanges19271938_2',
+            pane: 'pane_Broadchanges19271938_2',
+            onEachFeature: pop_Broadchanges19271938_2,
+            style: style_Broadchanges19271938_2_0,
+        });
+        bounds_group.addLayer(layer_Broadchanges19271938_2);
+        map.addLayer(layer_Broadchanges19271938_2);
+        function pop_Broadchanges19391944_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tunnel'] !== null ? autolinker.link(feature.properties['tunnel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_type'] !== null ? autolinker.link(feature.properties['BROAD_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_Poznan_street_names 2018'] !== null ? autolinker.link(feature.properties['BROAD_Poznan_street_names 2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_DP changes (from 14.10.20 0043)'] !== null ? autolinker.link(feature.properties['BROAD_DP changes (from 14.10.20 0043)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2018'] !== null ? autolinker.link(feature.properties['BROAD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1918-1926'] !== null ? autolinker.link(feature.properties['BROAD_1918-1926'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1927-1938'] !== null ? autolinker.link(feature.properties['BROAD_1927-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1939-1944'] !== null ? autolinker.link(feature.properties['BROAD_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1945-1955'] !== null ? autolinker.link(feature.properties['BROAD_1945-1955'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1956-1969'] !== null ? autolinker.link(feature.properties['BROAD_1956-1969'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1970-1979'] !== null ? autolinker.link(feature.properties['BROAD_1970-1979'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1980-1988'] !== null ? autolinker.link(feature.properties['BROAD_1980-1988'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1989-2004'] !== null ? autolinker.link(feature.properties['BROAD_1989-2004'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2005-2018'] !== null ? autolinker.link(feature.properties['BROAD_2005-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_BROAD changes'] !== null ? autolinker.link(feature.properties['BROAD_BROAD changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_field_16'] !== null ? autolinker.link(feature.properties['BROAD_field_16'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Broadchanges19391944_3_0(feature) {
+            switch(String(feature.properties['BROAD_1939-1944'])) {
+                case '0':
+                    return {
+                pane: 'pane_Broadchanges19391944_3',
+                opacity: 1,
+                color: 'rgba(253,231,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Broadchanges19391944_3',
+                opacity: 1,
+                color: 'rgba(158,218,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Broadchanges19391944_3',
+                opacity: 1,
+                color: 'rgba(39,127,142,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Broadchanges19391944_3',
+                opacity: 1,
+                color: 'rgba(69,50,127,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Broadchanges19391944_3');
+        map.getPane('pane_Broadchanges19391944_3').style.zIndex = 403;
+        map.getPane('pane_Broadchanges19391944_3').style['mix-blend-mode'] = 'normal';
+        var layer_Broadchanges19391944_3 = new L.geoJson(json_Broadchanges19391944_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Broadchanges19391944_3',
+            layerName: 'layer_Broadchanges19391944_3',
+            pane: 'pane_Broadchanges19391944_3',
+            onEachFeature: pop_Broadchanges19391944_3,
+            style: style_Broadchanges19391944_3_0,
+        });
+        bounds_group.addLayer(layer_Broadchanges19391944_3);
+        map.addLayer(layer_Broadchanges19391944_3);
+        function pop_Broadchanges19451955_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tunnel'] !== null ? autolinker.link(feature.properties['tunnel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_type'] !== null ? autolinker.link(feature.properties['BROAD_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_Poznan_street_names 2018'] !== null ? autolinker.link(feature.properties['BROAD_Poznan_street_names 2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_DP changes (from 14.10.20 0043)'] !== null ? autolinker.link(feature.properties['BROAD_DP changes (from 14.10.20 0043)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2018'] !== null ? autolinker.link(feature.properties['BROAD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1918-1926'] !== null ? autolinker.link(feature.properties['BROAD_1918-1926'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1927-1938'] !== null ? autolinker.link(feature.properties['BROAD_1927-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1939-1944'] !== null ? autolinker.link(feature.properties['BROAD_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1945-1955'] !== null ? autolinker.link(feature.properties['BROAD_1945-1955'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1956-1969'] !== null ? autolinker.link(feature.properties['BROAD_1956-1969'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1970-1979'] !== null ? autolinker.link(feature.properties['BROAD_1970-1979'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1980-1988'] !== null ? autolinker.link(feature.properties['BROAD_1980-1988'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1989-2004'] !== null ? autolinker.link(feature.properties['BROAD_1989-2004'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2005-2018'] !== null ? autolinker.link(feature.properties['BROAD_2005-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_BROAD changes'] !== null ? autolinker.link(feature.properties['BROAD_BROAD changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_field_16'] !== null ? autolinker.link(feature.properties['BROAD_field_16'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Broadchanges19451955_4_0(feature) {
+            switch(String(feature.properties['BROAD_1945-1955'])) {
+                case '0':
+                    return {
+                pane: 'pane_Broadchanges19451955_4',
+                opacity: 1,
+                color: 'rgba(253,231,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Broadchanges19451955_4',
+                opacity: 1,
+                color: 'rgba(158,218,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Broadchanges19451955_4',
+                opacity: 1,
+                color: 'rgba(39,127,142,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Broadchanges19451955_4',
+                opacity: 1,
+                color: 'rgba(69,50,127,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_Broadchanges19451955_4',
+                opacity: 1,
+                color: 'rgba(202,0,32,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Broadchanges19451955_4');
+        map.getPane('pane_Broadchanges19451955_4').style.zIndex = 404;
+        map.getPane('pane_Broadchanges19451955_4').style['mix-blend-mode'] = 'normal';
+        var layer_Broadchanges19451955_4 = new L.geoJson(json_Broadchanges19451955_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Broadchanges19451955_4',
+            layerName: 'layer_Broadchanges19451955_4',
+            pane: 'pane_Broadchanges19451955_4',
+            onEachFeature: pop_Broadchanges19451955_4,
+            style: style_Broadchanges19451955_4_0,
+        });
+        bounds_group.addLayer(layer_Broadchanges19451955_4);
+        map.addLayer(layer_Broadchanges19451955_4);
+        function pop_Broadchanges19561969_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tunnel'] !== null ? autolinker.link(feature.properties['tunnel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_type'] !== null ? autolinker.link(feature.properties['BROAD_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_Poznan_street_names 2018'] !== null ? autolinker.link(feature.properties['BROAD_Poznan_street_names 2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_DP changes (from 14.10.20 0043)'] !== null ? autolinker.link(feature.properties['BROAD_DP changes (from 14.10.20 0043)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2018'] !== null ? autolinker.link(feature.properties['BROAD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1918-1926'] !== null ? autolinker.link(feature.properties['BROAD_1918-1926'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1927-1938'] !== null ? autolinker.link(feature.properties['BROAD_1927-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1939-1944'] !== null ? autolinker.link(feature.properties['BROAD_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1945-1955'] !== null ? autolinker.link(feature.properties['BROAD_1945-1955'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1956-1969'] !== null ? autolinker.link(feature.properties['BROAD_1956-1969'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1970-1979'] !== null ? autolinker.link(feature.properties['BROAD_1970-1979'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1980-1988'] !== null ? autolinker.link(feature.properties['BROAD_1980-1988'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1989-2004'] !== null ? autolinker.link(feature.properties['BROAD_1989-2004'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2005-2018'] !== null ? autolinker.link(feature.properties['BROAD_2005-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_BROAD changes'] !== null ? autolinker.link(feature.properties['BROAD_BROAD changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_field_16'] !== null ? autolinker.link(feature.properties['BROAD_field_16'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Broadchanges19561969_5_0(feature) {
+            switch(String(feature.properties['BROAD_1956-1969'])) {
+                case '0':
+                    return {
+                pane: 'pane_Broadchanges19561969_5',
+                opacity: 1,
+                color: 'rgba(253,231,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Broadchanges19561969_5',
+                opacity: 1,
+                color: 'rgba(158,218,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Broadchanges19561969_5',
+                opacity: 1,
+                color: 'rgba(39,127,142,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Broadchanges19561969_5',
+                opacity: 1,
+                color: 'rgba(69,50,127,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Broadchanges19561969_5');
+        map.getPane('pane_Broadchanges19561969_5').style.zIndex = 405;
+        map.getPane('pane_Broadchanges19561969_5').style['mix-blend-mode'] = 'normal';
+        var layer_Broadchanges19561969_5 = new L.geoJson(json_Broadchanges19561969_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Broadchanges19561969_5',
+            layerName: 'layer_Broadchanges19561969_5',
+            pane: 'pane_Broadchanges19561969_5',
+            onEachFeature: pop_Broadchanges19561969_5,
+            style: style_Broadchanges19561969_5_0,
+        });
+        bounds_group.addLayer(layer_Broadchanges19561969_5);
+        map.addLayer(layer_Broadchanges19561969_5);
+        function pop_Broadchanges19701979_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tunnel'] !== null ? autolinker.link(feature.properties['tunnel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_type'] !== null ? autolinker.link(feature.properties['BROAD_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_Poznan_street_names 2018'] !== null ? autolinker.link(feature.properties['BROAD_Poznan_street_names 2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_DP changes (from 14.10.20 0043)'] !== null ? autolinker.link(feature.properties['BROAD_DP changes (from 14.10.20 0043)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2018'] !== null ? autolinker.link(feature.properties['BROAD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1918-1926'] !== null ? autolinker.link(feature.properties['BROAD_1918-1926'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1927-1938'] !== null ? autolinker.link(feature.properties['BROAD_1927-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1939-1944'] !== null ? autolinker.link(feature.properties['BROAD_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1945-1955'] !== null ? autolinker.link(feature.properties['BROAD_1945-1955'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1956-1969'] !== null ? autolinker.link(feature.properties['BROAD_1956-1969'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1970-1979'] !== null ? autolinker.link(feature.properties['BROAD_1970-1979'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1980-1988'] !== null ? autolinker.link(feature.properties['BROAD_1980-1988'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1989-2004'] !== null ? autolinker.link(feature.properties['BROAD_1989-2004'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2005-2018'] !== null ? autolinker.link(feature.properties['BROAD_2005-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_BROAD changes'] !== null ? autolinker.link(feature.properties['BROAD_BROAD changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_field_16'] !== null ? autolinker.link(feature.properties['BROAD_field_16'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Broadchanges19701979_6_0(feature) {
+            switch(String(feature.properties['BROAD_1970-1979'])) {
+                case '0':
+                    return {
+                pane: 'pane_Broadchanges19701979_6',
+                opacity: 1,
+                color: 'rgba(253,231,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Broadchanges19701979_6',
+                opacity: 1,
+                color: 'rgba(158,218,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Broadchanges19701979_6',
+                opacity: 1,
+                color: 'rgba(39,127,142,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Broadchanges19701979_6',
+                opacity: 1,
+                color: 'rgba(69,50,127,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_Broadchanges19701979_6',
+                opacity: 1,
+                color: 'rgba(202,0,32,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Broadchanges19701979_6');
+        map.getPane('pane_Broadchanges19701979_6').style.zIndex = 406;
+        map.getPane('pane_Broadchanges19701979_6').style['mix-blend-mode'] = 'normal';
+        var layer_Broadchanges19701979_6 = new L.geoJson(json_Broadchanges19701979_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Broadchanges19701979_6',
+            layerName: 'layer_Broadchanges19701979_6',
+            pane: 'pane_Broadchanges19701979_6',
+            onEachFeature: pop_Broadchanges19701979_6,
+            style: style_Broadchanges19701979_6_0,
+        });
+        bounds_group.addLayer(layer_Broadchanges19701979_6);
+        map.addLayer(layer_Broadchanges19701979_6);
+        function pop_Broadchanges19801988_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tunnel'] !== null ? autolinker.link(feature.properties['tunnel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_type'] !== null ? autolinker.link(feature.properties['BROAD_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_Poznan_street_names 2018'] !== null ? autolinker.link(feature.properties['BROAD_Poznan_street_names 2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_DP changes (from 14.10.20 0043)'] !== null ? autolinker.link(feature.properties['BROAD_DP changes (from 14.10.20 0043)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2018'] !== null ? autolinker.link(feature.properties['BROAD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1918-1926'] !== null ? autolinker.link(feature.properties['BROAD_1918-1926'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1927-1938'] !== null ? autolinker.link(feature.properties['BROAD_1927-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1939-1944'] !== null ? autolinker.link(feature.properties['BROAD_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1945-1955'] !== null ? autolinker.link(feature.properties['BROAD_1945-1955'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1956-1969'] !== null ? autolinker.link(feature.properties['BROAD_1956-1969'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1970-1979'] !== null ? autolinker.link(feature.properties['BROAD_1970-1979'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1980-1988'] !== null ? autolinker.link(feature.properties['BROAD_1980-1988'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1989-2004'] !== null ? autolinker.link(feature.properties['BROAD_1989-2004'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2005-2018'] !== null ? autolinker.link(feature.properties['BROAD_2005-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_BROAD changes'] !== null ? autolinker.link(feature.properties['BROAD_BROAD changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_field_16'] !== null ? autolinker.link(feature.properties['BROAD_field_16'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Broadchanges19801988_7_0(feature) {
+            switch(String(feature.properties['BROAD_1980-1988'])) {
+                case '0':
+                    return {
+                pane: 'pane_Broadchanges19801988_7',
+                opacity: 1,
+                color: 'rgba(253,231,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Broadchanges19801988_7',
+                opacity: 1,
+                color: 'rgba(158,218,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Broadchanges19801988_7',
+                opacity: 1,
+                color: 'rgba(39,127,142,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Broadchanges19801988_7',
+                opacity: 1,
+                color: 'rgba(69,50,127,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Broadchanges19801988_7');
+        map.getPane('pane_Broadchanges19801988_7').style.zIndex = 407;
+        map.getPane('pane_Broadchanges19801988_7').style['mix-blend-mode'] = 'normal';
+        var layer_Broadchanges19801988_7 = new L.geoJson(json_Broadchanges19801988_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Broadchanges19801988_7',
+            layerName: 'layer_Broadchanges19801988_7',
+            pane: 'pane_Broadchanges19801988_7',
+            onEachFeature: pop_Broadchanges19801988_7,
+            style: style_Broadchanges19801988_7_0,
+        });
+        bounds_group.addLayer(layer_Broadchanges19801988_7);
+        map.addLayer(layer_Broadchanges19801988_7);
+        function pop_Broadchanges19892004_8(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tunnel'] !== null ? autolinker.link(feature.properties['tunnel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_type'] !== null ? autolinker.link(feature.properties['BROAD_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_Poznan_street_names 2018'] !== null ? autolinker.link(feature.properties['BROAD_Poznan_street_names 2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_DP changes (from 14.10.20 0043)'] !== null ? autolinker.link(feature.properties['BROAD_DP changes (from 14.10.20 0043)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2018'] !== null ? autolinker.link(feature.properties['BROAD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1918-1926'] !== null ? autolinker.link(feature.properties['BROAD_1918-1926'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1927-1938'] !== null ? autolinker.link(feature.properties['BROAD_1927-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1939-1944'] !== null ? autolinker.link(feature.properties['BROAD_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1945-1955'] !== null ? autolinker.link(feature.properties['BROAD_1945-1955'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1956-1969'] !== null ? autolinker.link(feature.properties['BROAD_1956-1969'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1970-1979'] !== null ? autolinker.link(feature.properties['BROAD_1970-1979'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1980-1988'] !== null ? autolinker.link(feature.properties['BROAD_1980-1988'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1989-2004'] !== null ? autolinker.link(feature.properties['BROAD_1989-2004'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2005-2018'] !== null ? autolinker.link(feature.properties['BROAD_2005-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_BROAD changes'] !== null ? autolinker.link(feature.properties['BROAD_BROAD changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_field_16'] !== null ? autolinker.link(feature.properties['BROAD_field_16'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Broadchanges19892004_8_0(feature) {
+            switch(String(feature.properties['BROAD_1989-2004'])) {
+                case '0':
+                    return {
+                pane: 'pane_Broadchanges19892004_8',
+                opacity: 1,
+                color: 'rgba(253,231,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Broadchanges19892004_8',
+                opacity: 1,
+                color: 'rgba(158,218,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Broadchanges19892004_8',
+                opacity: 1,
+                color: 'rgba(39,127,142,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Broadchanges19892004_8',
+                opacity: 1,
+                color: 'rgba(69,50,127,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Broadchanges19892004_8');
+        map.getPane('pane_Broadchanges19892004_8').style.zIndex = 408;
+        map.getPane('pane_Broadchanges19892004_8').style['mix-blend-mode'] = 'normal';
+        var layer_Broadchanges19892004_8 = new L.geoJson(json_Broadchanges19892004_8, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Broadchanges19892004_8',
+            layerName: 'layer_Broadchanges19892004_8',
+            pane: 'pane_Broadchanges19892004_8',
+            onEachFeature: pop_Broadchanges19892004_8,
+            style: style_Broadchanges19892004_8_0,
+        });
+        bounds_group.addLayer(layer_Broadchanges19892004_8);
+        map.addLayer(layer_Broadchanges19892004_8);
+        function pop_Broadchanges20052018_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tunnel'] !== null ? autolinker.link(feature.properties['tunnel'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_type'] !== null ? autolinker.link(feature.properties['BROAD_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_Poznan_street_names 2018'] !== null ? autolinker.link(feature.properties['BROAD_Poznan_street_names 2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_DP changes (from 14.10.20 0043)'] !== null ? autolinker.link(feature.properties['BROAD_DP changes (from 14.10.20 0043)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2018'] !== null ? autolinker.link(feature.properties['BROAD_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1918-1926'] !== null ? autolinker.link(feature.properties['BROAD_1918-1926'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1927-1938'] !== null ? autolinker.link(feature.properties['BROAD_1927-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1939-1944'] !== null ? autolinker.link(feature.properties['BROAD_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1945-1955'] !== null ? autolinker.link(feature.properties['BROAD_1945-1955'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1956-1969'] !== null ? autolinker.link(feature.properties['BROAD_1956-1969'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1970-1979'] !== null ? autolinker.link(feature.properties['BROAD_1970-1979'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1980-1988'] !== null ? autolinker.link(feature.properties['BROAD_1980-1988'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_1989-2004'] !== null ? autolinker.link(feature.properties['BROAD_1989-2004'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_2005-2018'] !== null ? autolinker.link(feature.properties['BROAD_2005-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_BROAD changes'] !== null ? autolinker.link(feature.properties['BROAD_BROAD changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BROAD_field_16'] !== null ? autolinker.link(feature.properties['BROAD_field_16'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Broadchanges20052018_9_0(feature) {
+            switch(String(feature.properties['BROAD_2005-2018'])) {
+                case '0':
+                    return {
+                pane: 'pane_Broadchanges20052018_9',
+                opacity: 1,
+                color: 'rgba(253,231,37,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Broadchanges20052018_9',
+                opacity: 1,
+                color: 'rgba(158,218,57,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Broadchanges20052018_9',
+                opacity: 1,
+                color: 'rgba(39,127,142,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Broadchanges20052018_9',
+                opacity: 1,
+                color: 'rgba(69,50,127,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Broadchanges20052018_9');
+        map.getPane('pane_Broadchanges20052018_9').style.zIndex = 409;
+        map.getPane('pane_Broadchanges20052018_9').style['mix-blend-mode'] = 'normal';
+        var layer_Broadchanges20052018_9 = new L.geoJson(json_Broadchanges20052018_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Broadchanges20052018_9',
+            layerName: 'layer_Broadchanges20052018_9',
+            pane: 'pane_Broadchanges20052018_9',
+            onEachFeature: pop_Broadchanges20052018_9,
+            style: style_Broadchanges20052018_9_0,
+        });
+        bounds_group.addLayer(layer_Broadchanges20052018_9);
+        map.addLayer(layer_Broadchanges20052018_9);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'Broad changes 2005-2018<br /><table><tr><td style="text-align: center;"><img src="legend/Broadchanges20052018_9_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges20052018_9_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges20052018_9_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges20052018_9_33.png" /></td><td>3</td></tr></table>': layer_Broadchanges20052018_9,'Broad changes 1989-2004<br /><table><tr><td style="text-align: center;"><img src="legend/Broadchanges19892004_8_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19892004_8_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19892004_8_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19892004_8_33.png" /></td><td>3</td></tr></table>': layer_Broadchanges19892004_8,'Broad changes 1980-1988<br /><table><tr><td style="text-align: center;"><img src="legend/Broadchanges19801988_7_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19801988_7_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19801988_7_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19801988_7_33.png" /></td><td>3</td></tr></table>': layer_Broadchanges19801988_7,'Broad changes 1970-1979<br /><table><tr><td style="text-align: center;"><img src="legend/Broadchanges19701979_6_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19701979_6_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19701979_6_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19701979_6_33.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19701979_6_44.png" /></td><td>4</td></tr></table>': layer_Broadchanges19701979_6,'Broad changes 1956-1969<br /><table><tr><td style="text-align: center;"><img src="legend/Broadchanges19561969_5_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19561969_5_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19561969_5_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19561969_5_33.png" /></td><td>3</td></tr></table>': layer_Broadchanges19561969_5,'Broad changes 1945-1955<br /><table><tr><td style="text-align: center;"><img src="legend/Broadchanges19451955_4_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19451955_4_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19451955_4_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19451955_4_33.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19451955_4_44.png" /></td><td>4</td></tr></table>': layer_Broadchanges19451955_4,'Broad changes 1939-1944<br /><table><tr><td style="text-align: center;"><img src="legend/Broadchanges19391944_3_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19391944_3_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19391944_3_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19391944_3_33.png" /></td><td>3</td></tr></table>': layer_Broadchanges19391944_3,'Broad changes 1927-1938<br /><table><tr><td style="text-align: center;"><img src="legend/Broadchanges19271938_2_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19271938_2_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19271938_2_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19271938_2_33.png" /></td><td>3</td></tr></table>': layer_Broadchanges19271938_2,'Broad changes 1918-1926<br /><table><tr><td style="text-align: center;"><img src="legend/Broadchanges19181926_1_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19181926_1_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19181926_1_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Broadchanges19181926_1_33.png" /></td><td>3</td></tr></table>': layer_Broadchanges19181926_1,"ESRI Gray (light)": layer_ESRIGraylight_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
