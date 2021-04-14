@@ -23,6 +23,6 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td><a href="https://mill-maps.github.io/Poznań Changes (Effect)" target="_blank">Poznań Changes (effect): 4 periods</a></td>
+    <td><a href="https://mill-maps.github.io/Poznań Changes (effect)" target="_blank">Poznań Changes (effect): 4 periods</a></td>
   </tr>
 </table>
