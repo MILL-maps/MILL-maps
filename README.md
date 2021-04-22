@@ -30,3 +30,5 @@
     <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań Changes (effect): 4 (Polish) periods</a></td>
   </tr>
 </table>
+
+<a href="https://mill-maps.github.io/Graph_Poznan_Leipzig_changes.html" target="_blank">Graphs showing change over time: Poznań and Leipzig</a></td>
