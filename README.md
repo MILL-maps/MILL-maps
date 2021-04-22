@@ -31,4 +31,4 @@
   </tr>
 </table>
 
-<a href="https://mill-maps.github.io/Graph_Poznan_Leipzig_changes.html" target="_blank">Graphs showing change over time: Poznań and Leipzig</a></td>
+<a href="https://mill-maps.github.io/Graph_Poznan_Leipzig_changes.html" target="_blank">Graphs showing change over time: Poznań and Leipzig</a>
