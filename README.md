@@ -31,4 +31,4 @@
   </tr>
 </table>
 
-<a href="https://mill-maps.github.io/Graph_Leipzig_Poznan_changes.html" target="_blank">Graphs showing change by year & pediod (total, ideo, renamings): Leipzig and Poznań</a>
+<a href="https://mill-maps.github.io/Graph_Leipzig_Poznan_changes.html" target="_blank">Graphs showing change by year & period (total, ideo, renamings): Leipzig and Poznań</a>
