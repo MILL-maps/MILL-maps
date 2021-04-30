@@ -9,7 +9,7 @@
   <tr>
     <td><a href="https://arcg.is/0j8aXC" target="_blank">Leipzig ArcGIS online (TEST!)</a></td>
     <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+" target="_blank">Poznań All changes simple menu</a></td>
-    <td><a href="https://mill-maps.github.io/Graph_Poznan_only_changes.html" target="_blank">Graphs for Poznań Changes 4 & 9 periods</a></td>
+    <td><a href="https://mill-maps.github.io/Graph_Poznan_only_changes.html" target="_blank">Graphs for Poznań: 4 & 9 periods</a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST" target="_blank">Annaberg-Buchholz (Lines+Scan)</a></td>
