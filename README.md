@@ -18,16 +18,16 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Int-LAUD-GAL" target="_blank">Annaberg-Buchholz (LAUD & GAL)</a></td>
-    <td><a href="https://mill-maps.github.io/Poznań Broad changes (Leaflet)" target="_blank">Poznań Ideo+Transl: 9 periods (Leaflet)</a></td>
+    <td><a href="https://mill-maps.github.io/Poznań 9 periods IdeoTrans (Leaflet)" target="_blank">Poznań Ideo+Transl: 9 periods (Leaflet)</a></td>
     <td><a href="https://www.dropbox.com/sh/v0ful7wxujkt61q/AACQ0lKVkMI67Qnh87DeZdyNa" target="_blank">Poznań Ideo+Transl: 9 periods (png)</a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td><a href="https://mill-maps.github.io/Poznań Changes 4G periods" target="_blank">Poznań Changes (effect): 4 (German) periods</a></td>
+    <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań 4 periods IdeoTrans</a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań Changes (effect): 4 (Polish) periods</a></td>
+    <td><a href="https://mill-maps.github.io/Poznań Changes 4G periods" target="_blank">Poznań 4 (German) periods IdeoTrans</a></td>
   </tr>
 </table>
 
