@@ -23,12 +23,12 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań 4 periods IdeoTrans</a></td>
+    <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań Ideo+Transl: 4 Polish periods</a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td><a href="https://mill-maps.github.io/Poznań Changes 4G periods" target="_blank">Poznań 4 (German) periods IdeoTrans</a></td>
+    <td><a href="https://mill-maps.github.io/Poznań Changes 4G periods" target="_blank">Poznań Ideo+Transl: 4 German periods</a></td>
   </tr>
 </table>
-
-<a href="https://mill-maps.github.io/Graph_Leipzig_Poznan_changes.html" target="_blank">Graphs showing change by year & period (total, ideo, renamings): Leipzig and Poznań</a>
+<br>
+<a href="https://mill-maps.github.io/Graph_Leipzig_Poznan_changes.html" target="_blank">Graphs comparing change by year & period (total, ideo+trans, renamings): Leipzig and Poznań</a>
