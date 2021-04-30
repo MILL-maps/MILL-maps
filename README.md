@@ -3,8 +3,8 @@
 <table style="width:200%">
   <tr>
     <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a></h3></td>
-    <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a>(interactive maps)</h3></td>
-    <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a>(graphs & PNGs)</h3></td>
+    <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> (interactive maps)</h3></td>
+    <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> (graphs & PNGs)</h3></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/Leipzig_Leaflet" target="_blank">Leipzig Leaflet</a></td>
