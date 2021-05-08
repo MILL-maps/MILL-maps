@@ -31,6 +31,6 @@
     <td><a href="https://mill-maps.github.io/Graph_Leipzig_Poznan_changes.html" target="_blank">Graphs for Leipzig-Poznań comparisons</a></td>
   </tr>
 </table>
-<h3>The Germany-Poland border: Frankfurt (Oder) & Słubice</h3>
-  <a href="https://mill-maps.github.io/Frankfurt-Słubice Test" target="_blank">Frankfurt-Słubice Test</a>
+<h3>Germany-Poland border: Frankfurt (Oder) & Słubice</h3>
+  <a href="https://mill-maps.github.io/Frankfurt-Słubice Test/index.html" target="_blank">Frankfurt-Słubice Test</a>
   
