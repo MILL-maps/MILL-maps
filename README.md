@@ -3,8 +3,8 @@
 <table style="width:200%">
   <tr>
     <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a></h3></td>
-    <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> (interactive maps Leaflet)</h3></td>
-    <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> (graphs and PNG maps)</h3></td>
+    <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> <i>(interactive maps Leaflet)</i></h3></td>
+    <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> <i>(graphs and PNG maps)</i></h3></td>
   </tr>
   <tr>
     <td><a href="https://arcg.is/0j8aXC" target="_blank">Leipzig ArcGIS online (TEST!)</a></td>
@@ -31,3 +31,6 @@
     <td><a href="https://mill-maps.github.io/Graph_Leipzig_Poznan_changes.html" target="_blank">Graphs for Leipzig-Poznań comparisons</a></td>
   </tr>
 </table>
+<h3>The Germany-Poland border: Frankfurt (Oder) & Słubice
+  <a href="https://mill-maps.github.io/Frankfurt-Słubice Test" target="_blank">Frankfurt-Słubice Test</a>
+  
