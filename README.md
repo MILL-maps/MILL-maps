@@ -1,12 +1,12 @@
 <h2>Commemorative (re)naming in Germany and Poland 1916-2018</h2>
 <table style="width:200%">
   <tr>
-    <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a></h3></td>
-    <td><h3><a href="TEST">TEST</a> <i>(Test)</i></h3></td>
+    <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a> <i>(Annaberg-Buchholz)</i></h3></td>
+    <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a> <i>(Leipzig)</i></h3></td>
   </tr>
   <tr>
-    <td><a href="https://arcg.is/0j8aXC" target="_blank">Leipzig ArcGIS online (TEST!)</a></td>
     <td><h3><a href="TEST">TEST</a> <i>(Test)</i></h3></td>
+    <td><a href="https://arcg.is/0j8aXC" target="_blank">Leipzig ArcGIS online (TEST!)</a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST" target="_blank">Annaberg-Buchholz (Lines+Scan)</a></td>
@@ -25,7 +25,7 @@
     <td><h3><a href="TEST">TEST</a> <i>(Test)</i></h3></td>
   </tr>
 </table>
-<br>
+
 <table style="width:200%">
   <tr>
     <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> <i>(interactive maps Leaflet)</i></h3></td>
