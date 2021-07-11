@@ -21,7 +21,7 @@
     <td><a href="https://arcg.is/0j8aXC" target="_blank">Leipzig ArcGIS online (not to be implemented)</a></td>
   </tr>
 </table>
-
+<p>
 <table style="width:200%">
   <tr>
     <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> <i>(interactive maps Leaflet)</i></h3></td>
