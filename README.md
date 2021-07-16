@@ -14,11 +14,11 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td><a href="TEST">TEST</a> <i>(Test)</i></td>
+    <td><a href="https://arcg.is/0j8aXC" target="_blank">Leipzig ArcGIS online (Demo NOT to be implemented)</a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td><a href="https://arcg.is/0j8aXC" target="_blank">Leipzig ArcGIS online (not to be implemented)</a></td>
+    <td></td>
   </tr>
 </table>
 <p>
