@@ -6,7 +6,7 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST" target="_blank">Annaberg-Buchholz (Lines+Scan)</a></td>
-    <td><a href="https://mill-maps.github.io/Leipzig_July_2021">Leipzig_July_2021_FG</a> <i>(demo FG data)</i></td>
+    <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB">Leipzig_July_2021_IB_ΒΡ</a> <i>(demo IB+BReaks)</i></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Int-LAUD-GAL" target="_blank">Annaberg-Buchholz (LAUD & GAL)</a></td>
@@ -14,10 +14,11 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
-    <td><a href="https://arcg.is/0j8aXC" target="_blank">Leipzig ArcGIS online (Demo NOT to be implemented)</a></td>
+    <td><a href="https://mill-maps.github.io/Leipzig_July_2021">Leipzig_July_2021_FG</a> <i>(demo FG data)</i></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
+    <td><a href="https://arcg.is/0j8aXC" target="_blank">Leipzig ArcGIS online (Demo NOT to be implemented)</a></td>
     <td></td>
   </tr>
 </table>
