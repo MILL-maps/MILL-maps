@@ -6,7 +6,7 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST" target="_blank">Annaberg-Buchholz (Lines+Scan)</a></td>
-    <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB">Leipzig_July_2021_IB_ΒΡ</a> <i>(demo IB+BReaks)</i></td>
+    <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR">Leipzig_July_2021_IB_ΒΡ</a> <i>(demo IB+BReaks)</i></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Int-LAUD-GAL" target="_blank">Annaberg-Buchholz (LAUD & GAL)</a></td>
