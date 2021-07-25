@@ -5,7 +5,7 @@
     <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a> <i>(Leipzig)</i></h3></td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST" target="_blank">Annaberg-Buchholz (Lines+Scan)</a></td>
+    <td><a href="https://mill-maps.github.io/Graph_Leipzig_AB_changes.html" target="_blank">Annaberg-Buchholz & Leipzig Graph comparison</a></td>
     <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR">Leipzig_July_2021_IB_ΒR</a> <i>(demo IB+BReaks)</i></td>
   </tr>
   <tr>
@@ -13,7 +13,7 @@
     <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB">Leipzig_July_2021_IB</a> <i>(demo IB data)</i></td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2021_Complex" target="_blank">Annaberg-Buchholz (Very complex)</a></td>
+    <td><a href="https://mill-maps.github.io/A-B_qgis2web_2018_TEST" target="_blank">Annaberg-Buchholz (Lines+Scan)</a></td>
     <td><a href="https://mill-maps.github.io/Leipzig_July_2021">Leipzig_July_2021_FG</a> <i>(demo FG data)</i></td>
   </tr>
   <tr>
