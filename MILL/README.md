@@ -23,7 +23,7 @@
   </tr>
 </table>
 <p>
-<table style="width:200%">
+<table style="width:50%">
   <tr>
     <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> <i>(interactive maps Leaflet)</i></h3></td>
     <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a> <i>(graphs and PNG maps)</i></h3></td>
