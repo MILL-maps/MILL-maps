@@ -5,7 +5,7 @@
     <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a> <i>(Leipzig)</i></h3></td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_no_BG" target="_blank">Annaberg-Buchholz</a></td>
+    <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz</a></td>
     <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR" target="_blank">Leipzig</a> <i>(Total changes)</i></td>
   </tr>
 </table>
