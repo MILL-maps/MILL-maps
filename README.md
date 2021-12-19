@@ -13,7 +13,7 @@
     <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań <i>(Ideology: 4 Polish periods)</i></a></td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/Leipzig_Ideology" target="_blank">Leipzig <i>(Ideology)</i></a></td>
+    <td><a href="https://mill-maps.github.io/Leipzig_Ideology" target="_blank">Leipzig <i>(Ideology: 4 periods)</i></a></td>
     <td><a href="https://mill-maps.github.io/Poznań Changes 4G periods" target="_blank">Poznań <i>(Ideology: 4 German periods)</i></a></td>
   </tr>
 </table>
