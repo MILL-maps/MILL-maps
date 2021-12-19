@@ -1,5 +1,5 @@
 <h2>Commemorative (re)naming in Germany and Poland 1916-2018</h2>
-<table style="width:200%">
+<table style="width:50%">
   <tr>
     <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a> <i>(Annaberg-Buchholz)</i></h3></td>
     <td><h3><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a> <i>(Leipzig)</i></h3></td>
