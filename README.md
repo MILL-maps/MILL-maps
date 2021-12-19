@@ -6,15 +6,15 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz</a></td>
-    <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR" target="_blank">Leipzig</a> <i>(Total changes)</i></td>
+    <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+" target="_blank">Poznań</a> <i>(Total changes)</i></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR" target="_blank">Leipzig</a> <i>(Total changes)</i></td>
-    <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+" target="_blank">Poznań All changes simple menu</a></td>
+    <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań <i>(Ideology: 4 Polish periods</i></a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/Leipzig_Ideology" target="_blank">Leipzig</a> <i>(Ideology)</i></td>
-    <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań Ideo+Transl: 4 Polish periods</a></td>
+    <td><a href="https://mill-maps.github.io/Poznań Changes 4G periods" target="_blank">Poznań <i>(Ideology: 4 German periods</i></a></td>
   </tr>
 </table>
 <p>
