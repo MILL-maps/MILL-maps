@@ -8,6 +8,10 @@
     <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz</a></td>
     <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR" target="_blank">Leipzig</a> <i>(Total changes)</i></td>
   </tr>
+  <tr>
+    <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz</a></td>
+    <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR" target="_blank">Leipzig</a> <i>(Total changes)</i></td>
+  </tr>
 </table>
 <p>
 <table style="width:200%">
