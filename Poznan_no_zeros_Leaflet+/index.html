@@ -31,7 +31,7 @@
         <script src="data/gis_osm_roads_free_17_only_1.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:1
+            zoomControl:true, maxZoom:16, minZoom:7
         }).fitBounds([[52.348220875632954,16.785618413547834],[52.45459061357917,17.051194548852312]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
@@ -43,10 +43,10 @@
         map.getPane('pane_OSMStandard_0').style.zIndex = 400;
         var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             pane: 'pane_OSMStandard_0',
-            opacity: 0.378,
+            opacity: 0.3,
             attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
-            minZoom: 1,
-            maxZoom: 28,
+            minZoom: 7,
+            maxZoom: 16,
             minNativeZoom: 0,
             maxNativeZoom: 19
         });
