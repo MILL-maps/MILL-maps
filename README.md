@@ -5,15 +5,15 @@
     <td><h3><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a></h3></td>
   </tr>
   <tr>
-    <td> </td>
+    <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR" target="_blank">Leipzig <i>(Total changes)</i></a></td>
     <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+" target="_blank">Poznań <i>(Total changes)</i></a></td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR" target="_blank">Leipzig <i>(Total changes)</i></a></td>
+    <td><a href="https://mill-maps.github.io/Leipzig_Ideology" target="_blank">Leipzig <i>(Ideology: 4 German periods)</i></a></td>
     <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań <i>(Ideology: 4 Polish periods)</i></a></td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/Leipzig_Ideology" target="_blank">Leipzig <i>(Ideology: 4 periods)</i></a></td>
+    <td><a href="https://mill-maps.github.io/Leipzig_Ideology" target="_blank">Leipzig <i>(Ideology: 4 German periods)</i></a></td>
     <td><a href="https://mill-maps.github.io/Poznań Changes 4G periods" target="_blank">Poznań <i>(Ideology: 4 German periods)</i></a></td>
   </tr>
   <tr>
