@@ -17,7 +17,7 @@
     <td><a href="https://mill-maps.github.io/Poznań Changes 4G periods" target="_blank">Poznań <i>(Ideology: 4 German periods)</i></a></td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz</a></td>
+    <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz <i>(Ideology)</i></a></td>
     <td><a href="https://mill-maps.github.io/Zbąszyń_Changes_only" target="_blank">Zbąszyń <i>(Total changes)</i></a></td>
   </tr>
 </table>
