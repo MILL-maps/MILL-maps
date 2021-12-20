@@ -23,5 +23,5 @@
 </table>
 <p>
 <h3>Germany-Poland border: Frankfurt (Oder) & Słubice</h3>
-  <a href="https://mill-maps.github.io/Frankfurt-Słubice Test/index.html" target="_blank">Frankfurt-Słubice Test</a>
+  <a href="https://mill-maps.github.io/Słubice_Ideology" target="_blank">Słubice <i>(Ideology)</i></a>
   
