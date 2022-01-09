@@ -14,7 +14,7 @@
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/Leipzig_Ideology" target="_blank">Leipzig <i>(Ideology: 4 German periods)</i></a></td>
-    <td><a href="https://mill-maps.github.io/Poznań Changes 4G periods" target="_blank">Poznań <i>(Ideology: 4 German periods)</i></a></td>
+    <td>Poznań <i>(Ideology: 9 Polish periods) PLACEHOLDER</i></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz <i>(Ideology)</i></a></td>
