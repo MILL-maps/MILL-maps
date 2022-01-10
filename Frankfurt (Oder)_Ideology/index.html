@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
+        <script src="data/FrankfurtOderPopups_1.js"></script>
+        <script src="data/Nonideological19892018_2.js"></script>
+        <script src="data/Ideological19892018_3.js"></script>
+        <script src="data/Nonideological19451988_4.js"></script>
+        <script src="data/Ideological19451988_5.js"></script>
+        <script src="data/Nonideological19331944_6.js"></script>
+        <script src="data/Ideological19331944_7.js"></script>
+        <script src="data/Nonideological19161932_8.js"></script>
+        <script src="data/Ideological19161932_9.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:16, minZoom:7
+        })
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+        }
+        map.createPane('pane_ESRIGraylight_0');
+        map.getPane('pane_ESRIGraylight_0').style.zIndex = 400;
+        var layer_ESRIGraylight_0 = L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRIGraylight_0',
+            opacity: 0.75,
+            attribution: '',
+            minZoom: 7,
+            maxZoom: 16,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_ESRIGraylight_0;
+        map.addLayer(layer_ESRIGraylight_0);
+        function pop_FrankfurtOderPopups_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>name</strong><br />' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_OSM_name</th>\
+                        <td>' + (feature.properties['FrankfurtOder_OSM_name'] !== null ? autolinker.link(feature.properties['FrankfurtOder_OSM_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_Sum_Change</th>\
+                        <td>' + (feature.properties['FrankfurtOder_Sum_Change'] !== null ? autolinker.link(feature.properties['FrankfurtOder_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_ide_2018-1989</th>\
+                        <td>' + (feature.properties['FrankfurtOder_ide_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_ide_1988-1945</th>\
+                        <td>' + (feature.properties['FrankfurtOder_ide_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_ide_1944-1933</th>\
+                        <td>' + (feature.properties['FrankfurtOder_ide_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_ide_1932-1916</th>\
+                        <td>' + (feature.properties['FrankfurtOder_ide_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_ide_Sum</th>\
+                        <td>' + (feature.properties['FrankfurtOder_ide_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_non_2018-1989</th>\
+                        <td>' + (feature.properties['FrankfurtOder_non_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_non_1988-1945</th>\
+                        <td>' + (feature.properties['FrankfurtOder_non_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_non_1944-1933</th>\
+                        <td>' + (feature.properties['FrankfurtOder_non_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_non_1932-1916</th>\
+                        <td>' + (feature.properties['FrankfurtOder_non_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FrankfurtOder_non_Sum</th>\
+                        <td>' + (feature.properties['FrankfurtOder_non_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FrankfurtOderPopups_1_0() {
+            return {
+                pane: 'pane_FrankfurtOderPopups_1',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_FrankfurtOderPopups_1');
+        map.getPane('pane_FrankfurtOderPopups_1').style.zIndex = 401;
+        map.getPane('pane_FrankfurtOderPopups_1').style['mix-blend-mode'] = 'normal';
+        var layer_FrankfurtOderPopups_1 = new L.geoJson(json_FrankfurtOderPopups_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_FrankfurtOderPopups_1',
+            layerName: 'layer_FrankfurtOderPopups_1',
+            pane: 'pane_FrankfurtOderPopups_1',
+            onEachFeature: pop_FrankfurtOderPopups_1,
+            style: style_FrankfurtOderPopups_1_0,
+        });
+        bounds_group.addLayer(layer_FrankfurtOderPopups_1);
+        map.addLayer(layer_FrankfurtOderPopups_1);
+        function pop_Nonideological19892018_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_OSM_name'] !== null ? autolinker.link(feature.properties['FrankfurtOder_OSM_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_Sum_Change'] !== null ? autolinker.link(feature.properties['FrankfurtOder_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Nonideological19892018_2_0(feature) {
+            switch(String(feature.properties['FrankfurtOder_non_2018-1989'])) {
+                case '0':
+                    return {
+                pane: 'pane_Nonideological19892018_2',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Nonideological19892018_2',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Nonideological19892018_2',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Nonideological19892018_2',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Nonideological19892018_2');
+        map.getPane('pane_Nonideological19892018_2').style.zIndex = 402;
+        map.getPane('pane_Nonideological19892018_2').style['mix-blend-mode'] = 'normal';
+        var layer_Nonideological19892018_2 = new L.geoJson(json_Nonideological19892018_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Nonideological19892018_2',
+            layerName: 'layer_Nonideological19892018_2',
+            pane: 'pane_Nonideological19892018_2',
+            onEachFeature: pop_Nonideological19892018_2,
+            style: style_Nonideological19892018_2_0,
+        });
+        bounds_group.addLayer(layer_Nonideological19892018_2);
+        map.addLayer(layer_Nonideological19892018_2);
+        function pop_Ideological19892018_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_OSM_name'] !== null ? autolinker.link(feature.properties['FrankfurtOder_OSM_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_Sum_Change'] !== null ? autolinker.link(feature.properties['FrankfurtOder_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Ideological19892018_3_0(feature) {
+            switch(String(feature.properties['FrankfurtOder_ide_2018-1989'])) {
+                case '0':
+                    return {
+                pane: 'pane_Ideological19892018_3',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Ideological19892018_3',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Ideological19892018_3',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Ideological19892018_3',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Ideological19892018_3');
+        map.getPane('pane_Ideological19892018_3').style.zIndex = 403;
+        map.getPane('pane_Ideological19892018_3').style['mix-blend-mode'] = 'normal';
+        var layer_Ideological19892018_3 = new L.geoJson(json_Ideological19892018_3, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Ideological19892018_3',
+            layerName: 'layer_Ideological19892018_3',
+            pane: 'pane_Ideological19892018_3',
+            onEachFeature: pop_Ideological19892018_3,
+            style: style_Ideological19892018_3_0,
+        });
+        bounds_group.addLayer(layer_Ideological19892018_3);
+        map.addLayer(layer_Ideological19892018_3);
+        function pop_Nonideological19451988_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_OSM_name'] !== null ? autolinker.link(feature.properties['FrankfurtOder_OSM_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_Sum_Change'] !== null ? autolinker.link(feature.properties['FrankfurtOder_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Nonideological19451988_4_0(feature) {
+            switch(String(feature.properties['FrankfurtOder_non_1988-1945'])) {
+                case '0':
+                    return {
+                pane: 'pane_Nonideological19451988_4',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Nonideological19451988_4',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Nonideological19451988_4',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Nonideological19451988_4',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Nonideological19451988_4');
+        map.getPane('pane_Nonideological19451988_4').style.zIndex = 404;
+        map.getPane('pane_Nonideological19451988_4').style['mix-blend-mode'] = 'normal';
+        var layer_Nonideological19451988_4 = new L.geoJson(json_Nonideological19451988_4, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Nonideological19451988_4',
+            layerName: 'layer_Nonideological19451988_4',
+            pane: 'pane_Nonideological19451988_4',
+            onEachFeature: pop_Nonideological19451988_4,
+            style: style_Nonideological19451988_4_0,
+        });
+        bounds_group.addLayer(layer_Nonideological19451988_4);
+        map.addLayer(layer_Nonideological19451988_4);
+        function pop_Ideological19451988_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_OSM_name'] !== null ? autolinker.link(feature.properties['FrankfurtOder_OSM_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_Sum_Change'] !== null ? autolinker.link(feature.properties['FrankfurtOder_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Ideological19451988_5_0(feature) {
+            switch(String(feature.properties['FrankfurtOder_ide_1988-1945'])) {
+                case '0':
+                    return {
+                pane: 'pane_Ideological19451988_5',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Ideological19451988_5',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Ideological19451988_5',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_Ideological19451988_5',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Ideological19451988_5',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Ideological19451988_5');
+        map.getPane('pane_Ideological19451988_5').style.zIndex = 405;
+        map.getPane('pane_Ideological19451988_5').style['mix-blend-mode'] = 'normal';
+        var layer_Ideological19451988_5 = new L.geoJson(json_Ideological19451988_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Ideological19451988_5',
+            layerName: 'layer_Ideological19451988_5',
+            pane: 'pane_Ideological19451988_5',
+            onEachFeature: pop_Ideological19451988_5,
+            style: style_Ideological19451988_5_0,
+        });
+        bounds_group.addLayer(layer_Ideological19451988_5);
+        map.addLayer(layer_Ideological19451988_5);
+        function pop_Nonideological19331944_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_OSM_name'] !== null ? autolinker.link(feature.properties['FrankfurtOder_OSM_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_Sum_Change'] !== null ? autolinker.link(feature.properties['FrankfurtOder_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Nonideological19331944_6_0(feature) {
+            switch(String(feature.properties['FrankfurtOder_non_1944-1933'])) {
+                case '0':
+                    return {
+                pane: 'pane_Nonideological19331944_6',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Nonideological19331944_6',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Nonideological19331944_6',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Nonideological19331944_6',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Nonideological19331944_6');
+        map.getPane('pane_Nonideological19331944_6').style.zIndex = 406;
+        map.getPane('pane_Nonideological19331944_6').style['mix-blend-mode'] = 'normal';
+        var layer_Nonideological19331944_6 = new L.geoJson(json_Nonideological19331944_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Nonideological19331944_6',
+            layerName: 'layer_Nonideological19331944_6',
+            pane: 'pane_Nonideological19331944_6',
+            onEachFeature: pop_Nonideological19331944_6,
+            style: style_Nonideological19331944_6_0,
+        });
+        bounds_group.addLayer(layer_Nonideological19331944_6);
+        map.addLayer(layer_Nonideological19331944_6);
+        function pop_Ideological19331944_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_OSM_name'] !== null ? autolinker.link(feature.properties['FrankfurtOder_OSM_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_Sum_Change'] !== null ? autolinker.link(feature.properties['FrankfurtOder_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Ideological19331944_7_0(feature) {
+            switch(String(feature.properties['FrankfurtOder_ide_1944-1933'])) {
+                case '0':
+                    return {
+                pane: 'pane_Ideological19331944_7',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Ideological19331944_7',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Ideological19331944_7',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Ideological19331944_7',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Ideological19331944_7');
+        map.getPane('pane_Ideological19331944_7').style.zIndex = 407;
+        map.getPane('pane_Ideological19331944_7').style['mix-blend-mode'] = 'normal';
+        var layer_Ideological19331944_7 = new L.geoJson(json_Ideological19331944_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Ideological19331944_7',
+            layerName: 'layer_Ideological19331944_7',
+            pane: 'pane_Ideological19331944_7',
+            onEachFeature: pop_Ideological19331944_7,
+            style: style_Ideological19331944_7_0,
+        });
+        bounds_group.addLayer(layer_Ideological19331944_7);
+        map.addLayer(layer_Ideological19331944_7);
+        function pop_Nonideological19161932_8(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_OSM_name'] !== null ? autolinker.link(feature.properties['FrankfurtOder_OSM_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_Sum_Change'] !== null ? autolinker.link(feature.properties['FrankfurtOder_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Nonideological19161932_8_0(feature) {
+            switch(String(feature.properties['FrankfurtOder_non_1932-1916'])) {
+                case '0':
+                    return {
+                pane: 'pane_Nonideological19161932_8',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Nonideological19161932_8',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Nonideological19161932_8',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Nonideological19161932_8',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Nonideological19161932_8');
+        map.getPane('pane_Nonideological19161932_8').style.zIndex = 408;
+        map.getPane('pane_Nonideological19161932_8').style['mix-blend-mode'] = 'normal';
+        var layer_Nonideological19161932_8 = new L.geoJson(json_Nonideological19161932_8, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Nonideological19161932_8',
+            layerName: 'layer_Nonideological19161932_8',
+            pane: 'pane_Nonideological19161932_8',
+            onEachFeature: pop_Nonideological19161932_8,
+            style: style_Nonideological19161932_8_0,
+        });
+        bounds_group.addLayer(layer_Nonideological19161932_8);
+        map.addLayer(layer_Nonideological19161932_8);
+        function pop_Ideological19161932_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_OSM_name'] !== null ? autolinker.link(feature.properties['FrankfurtOder_OSM_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_Sum_Change'] !== null ? autolinker.link(feature.properties['FrankfurtOder_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_ide_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_2018-1989'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1988-1945'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1944-1933'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1944-1933'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_1932-1916'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_1932-1916'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FrankfurtOder_non_Sum'] !== null ? autolinker.link(feature.properties['FrankfurtOder_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Ideological19161932_9_0(feature) {
+            switch(String(feature.properties['FrankfurtOder_ide_1932-1916'])) {
+                case '0':
+                    return {
+                pane: 'pane_Ideological19161932_9',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_Ideological19161932_9',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_Ideological19161932_9',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Ideological19161932_9',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Ideological19161932_9');
+        map.getPane('pane_Ideological19161932_9').style.zIndex = 409;
+        map.getPane('pane_Ideological19161932_9').style['mix-blend-mode'] = 'normal';
+        var layer_Ideological19161932_9 = new L.geoJson(json_Ideological19161932_9, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Ideological19161932_9',
+            layerName: 'layer_Ideological19161932_9',
+            pane: 'pane_Ideological19161932_9',
+            onEachFeature: pop_Ideological19161932_9,
+            style: style_Ideological19161932_9_0,
+        });
+        bounds_group.addLayer(layer_Ideological19161932_9);
+        map.addLayer(layer_Ideological19161932_9);
+        var osmGeocoder = new L.Control.Geocoder({
+            collapsed: true,
+            position: 'topleft',
+            text: 'Search',
+            title: 'Testing'
+        }).addTo(map);
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .className += ' fa fa-search';
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .title += 'Search for a place';
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'Ideological 1916-1932<br /><table><tr><td style="text-align: center;"><img src="legend/Ideological19161932_9_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19161932_9_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19161932_9_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19161932_9_3.png" /></td><td></td></tr></table>': layer_Ideological19161932_9,'Non-ideological 1916-1932<br /><table><tr><td style="text-align: center;"><img src="legend/Nonideological19161932_8_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19161932_8_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19161932_8_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19161932_8_3.png" /></td><td></td></tr></table>': layer_Nonideological19161932_8,'Ideological 1933-1944<br /><table><tr><td style="text-align: center;"><img src="legend/Ideological19331944_7_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19331944_7_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19331944_7_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19331944_7_3.png" /></td><td></td></tr></table>': layer_Ideological19331944_7,'Non-ideological 1933-1944<br /><table><tr><td style="text-align: center;"><img src="legend/Nonideological19331944_6_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19331944_6_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19331944_6_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19331944_6_3.png" /></td><td></td></tr></table>': layer_Nonideological19331944_6,'Ideological 1945-1988<br /><table><tr><td style="text-align: center;"><img src="legend/Ideological19451988_5_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19451988_5_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19451988_5_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19451988_5_33.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19451988_5_4.png" /></td><td></td></tr></table>': layer_Ideological19451988_5,'Non-ideological 1945-1988<br /><table><tr><td style="text-align: center;"><img src="legend/Nonideological19451988_4_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19451988_4_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19451988_4_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19451988_4_3.png" /></td><td></td></tr></table>': layer_Nonideological19451988_4,'Ideological 1989-2018<br /><table><tr><td style="text-align: center;"><img src="legend/Ideological19892018_3_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19892018_3_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19892018_3_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/Ideological19892018_3_3.png" /></td><td></td></tr></table>': layer_Ideological19892018_3,'Non-ideological 1989-2018<br /><table><tr><td style="text-align: center;"><img src="legend/Nonideological19892018_2_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19892018_2_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19892018_2_32.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/Nonideological19892018_2_3.png" /></td><td></td></tr></table>': layer_Nonideological19892018_2,'<img src="legend/FrankfurtOderPopups_1.png" /> Frankfurt (Oder) Popups': layer_FrankfurtOderPopups_1,"ESRI Gray (light)": layer_ESRIGraylight_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
