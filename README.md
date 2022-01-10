@@ -17,11 +17,11 @@ Streets named as a result of these two non-ideological processes are marked blue
 For a more detailed description of the methodology applied for the classification of street name changes and processes, please see the following open access article:
 <br>
 Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2021. Ideology in the linguistic landscape: Towards a quantitative approach. <i>Discourse & Society.</i> 32(4):405-425 <a href="https://journals.sagepub.com/doi/10.1177/0957926521992149" target="_blank">doi:10.1177/0957926521992149</a></li>
-<p>
 </h5>
+
 <table style="width:200%">
   <tr>
-    <td><h4><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a></43></td>
+    <td><h4><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a></h4></td>
     <td><h4><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a></h4></td>
   </tr>
   <h5>
@@ -43,7 +43,7 @@ Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2
   </tr>
 </table>
 </h5>
-<p>
+<br>
 <h4>Germany-Poland border: Frankfurt (Oder) & Słubice</h4>
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Changes" target="_blank">Frankfurt an der Oder <i>(All changes)</i></a><br>
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Ideology" target="_blank">Frankfurt an der Oder <i>(Ideology by period)</i></a><br>
