@@ -1,4 +1,5 @@
 <h2>Commemorative (re)naming in Germany and Poland 1916-2018</h2>
+
 <h5>
 In the links below there are two types of maps: (1) Total changes and (2) Ideology. <br>
 The “Total changes” maps show how many times in the period of 1916-2018 each street was renamed. The numbers vary between 1 (named once and retained the same name throughout the period) to 7. The “ideology” maps show if the process of (re-)naming of the street was ideological. There are four types of renaming processes which we considered ideological:<br>
@@ -17,7 +18,7 @@ For a more detailed description of the methodology applied for the classificatio
 <br>
 Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2021. Ideology in the linguistic landscape: Towards a quantitative approach. <i>Discourse & Society.</i> 32(4):405-425 <a href="https://journals.sagepub.com/doi/10.1177/0957926521992149" target="_blank">doi:10.1177/0957926521992149</a>
 </h5>
-<br>
+
 <table style="width:200%">
   <tr>
     <td><h4><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a></h4></td>
@@ -40,9 +41,9 @@ Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2
     <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz <i>(Ideology)</i></a></td>
     <td><a href="https://mill-maps.github.io/Zbąszyń_Changes_only" target="_blank">Zbąszyń <i>(Total changes)</i></a></td>
   </tr>
+  </h5>
 </table>
-</h5>
-<br>
+
 <h4>Germany-Poland border: Frankfurt (Oder) & Słubice</h4>
 <h5>
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Changes" target="_blank">Frankfurt an der Oder <i>(All changes)</i></a><br>
