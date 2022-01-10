@@ -17,7 +17,7 @@ For a more detailed description of the methodology applied for the classificatio
 <br>
 Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2021. Ideology in the linguistic landscape: Towards a quantitative approach. <i>Discourse & Society.</i> 32(4):405-425 <a href="https://journals.sagepub.com/doi/10.1177/0957926521992149" target="_blank">doi:10.1177/0957926521992149</a>
 </font>
-<br>
+
 <table style="width:200%">
   <tr>
     <td><h4><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a></h4></td>
