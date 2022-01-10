@@ -1,5 +1,5 @@
 <h2>Commemorative (re)naming in Germany and Poland 1916-2018</h2>
-<font size="-1">
+<font size="3">
 In the links below there are two types of maps: (1) Total changes and (2) Ideology. <br>
 The “Total changes” maps show how many times in the period of 1916-2018 each street was renamed. The numbers vary between 1 (named once and retained the same name throughout the period) to 7. The “ideology” maps show if the process of (re-)naming of the street was ideological. There are four types of renaming processes which we considered ideological:<br>
 (1) when a street is named for the first time after an important political figure, e.g. in Annaberg-Bucholz in 1935 a new street was named after Dietrich-Eckart, a Nazi ideologue.<br>
