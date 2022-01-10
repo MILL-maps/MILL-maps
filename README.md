@@ -1,9 +1,23 @@
 <h2>Commemorative (re)naming in Germany and Poland 1916-2018</h2>
-<h5>For an explanation of the methodology applied for the classification of street name changes and processes, please see the following open access articles:
-  <ul>
-    <li>Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2021. Ideology in the linguistic landscape: Towards a quantitative approach. <i>Discourse & Society.</i> 32(4):405-425 <a href="https://journals.sagepub.com/doi/10.1177/0957926521992149" target="_blank">doi:10.1177/0957926521992149</a></li>
-    <li>PLACEHOLDER</li>
-  </ul>
+<h5>
+In the links below there are two types of maps: (1) Total changes and (2) Ideology. 
+The “Total changes” maps show how many times in the period of 1916-2018 each street was renamed. The numbers vary between 1 (named once and retained the same name throughout the period) to 7. 
+The “ideology” maps show if the process of (re-)naming of the street was ideological. There are four types of renaming processes which we considered ideological:
+(1) when a street is named for the first time after an important political figure, e.g. in Annaberg-Bucholz in 1935 a new street was named after Dietrich-Eckart, a Nazi ideologue. 
+(2) when one ideologically loaded name is replaced by another, e.g.  in Zbąszyń, Bismarckstrasse (named after the German chancellor) was replaced by  Zygmunt (Polish king) in 1920 and again in 1945. 
+(3) when a street with non-ideological name is replaced with an ideological name, e.g. when in Zbąszyń in 1970 ulica Sportowa (Sport’s Street) was changed to ulica Walki Młodych (Union of Youth Struggle Street, named after a communist youth organisation).
+(4) when an undesired ideological name is purged from the city landscape and replaced with a non-ideological name, e.g. in Annaberg-Bucholz in 1945 Horst Wessel-Straße (a Nazi martyr) was renamed Rosenweg (Rose Street).
+All these four types of changes were considered ideological and are marked red on the maps. This means that even though today, a street name like Rosenweg, (Rose Street) may no longer be ideological it has a history of having been ideological in the past.
+<br>
+Two types of naming processes were considered non-ideological:
+(1) when a new street was named with a non-ideological name, e.g. in Zbąszyń in 1966 a new street was named Szeroka (Broad Street).
+(2) when one non-ideological name was replaced with another non-ideological name, e.g. in Annaberg-Bucholz in 1996 a part of Hohe Staße (High Street) was renamed Ritterspornweg (Larkspur Way). The renaming was motivated by a desire to avoid confusion caused by the fact that two branches of the Y-shaped street carried the same name.
+Streets named as a result of these two non-ideological processes are marked blue on the maps.
+<br>
+For a more detailed description of the methodology applied for the classification of street name changes and processes, please see the following open access article:
+<br>
+Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2021. Ideology in the linguistic landscape: Towards a quantitative approach. <i>Discourse & Society.</i> 32(4):405-425 <a href="https://journals.sagepub.com/doi/10.1177/0957926521992149" target="_blank">doi:10.1177/0957926521992149</a></li>
+<p>
 </h5>
 <table style="width:200%">
   <tr>
