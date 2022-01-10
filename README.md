@@ -1,21 +1,15 @@
 <h2>Commemorative (re)naming in Germany and Poland 1916-2018</h2>
 <font size="3">
-In the links below there are two types of maps showing: Total changes and Ideology.<br>
-The “Total changes” maps show how many times in the period of 1916-2018 each street was renamed. The numbers vary between 1 (named once and retained the same name throughout the period) to 7. The “ideology” maps show if the process of (re-)naming of the street was ideological. There are four types of renaming processes which we considered ideological:<br>
+In the links below there are two types of maps showing: those illusttrating <i>total number of changes</i> and those illusttrating <i>changes in ideology</i>.<br>
+The <i>Total changes</i> maps show how many times in the period of 1916-2018 each street was renamed. The numbers vary between 1 (named once and retained the same name throughout the period) to 7. The <i>Ideology</i> maps show if the process of (re-)naming of the street had an ideological outcome. There are three types of renaming processes which we considered as resulting in an ideological outcome, coloured red on the maps:<br>
 (1) when a street is named for the first time after an important political figure, e.g. in Annaberg-Bucholz in 1935 a new street was named after Dietrich-Eckart, a Nazi ideologue.<br>
 (2) when one ideologically loaded name is replaced by another, e.g.  in Zbąszyń, Bismarckstrasse (named after the German chancellor) was replaced by  Zygmunt (Polish king) in 1920 and again in 1945.<br>
 (3) when a street with non-ideological name is replaced with an ideological name, e.g. when in Zbąszyń in 1970 ulica Sportowa (Sport’s Street) was changed to ulica Walki Młodych (Union of Youth Struggle Street, named after a communist youth organisation).<br>
-(4) when an undesired ideological name is purged from the city landscape and replaced with a non-ideological name, e.g. in Annaberg-Bucholz in 1945 Horst Wessel-Straße (a Nazi martyr) was renamed Rosenweg (Rose Street).<br>
-All these four types of changes were considered ideological and are marked red on the maps. This means that even though today, a street name like Rosenweg, (Rose Street) may no longer be ideological it has a history of having been ideological in the past.<br>
 <br>
-Two types of naming processes were considered non-ideological:<br>
+Two types of naming processes were considered as non-ideological in outcome:<br>
 (1) when a new street was named with a non-ideological name, e.g. in Zbąszyń in 1966 a new street was named Szeroka (Broad Street).<br>
 (2) when one non-ideological name was replaced with another non-ideological name, e.g. in Annaberg-Bucholz in 1996 a part of Hohe Staße (High Street) was renamed Ritterspornweg (Larkspur Way). The renaming was motivated by a desire to avoid confusion caused by the fact that two branches of the Y-shaped street carried the same name.<br>
-Streets named as a result of these two non-ideological processes are marked blue on the maps.<br>
-<br>
-For a more detailed description of the methodology applied for the classification of street name changes and processes, please see the following open access article:
-<br>
-Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2021. Ideology in the linguistic landscape: Towards a quantitative approach. <i>Discourse & Society.</i> 32(4):405-425 <a href="https://journals.sagepub.com/doi/10.1177/0957926521992149" target="_blank">doi:10.1177/0957926521992149</a>
+Streets named as a result of these two non-ideological processes are coloured blue on the maps.<br>
 </font>
 
 <table style="width:200%">
@@ -44,3 +38,9 @@ Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Changes" target="_blank">Frankfurt an der Oder <i>(All changes)</i></a><br>
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Ideology" target="_blank">Frankfurt an der Oder <i>(Ideology by period)</i></a><br>
   <a href="https://mill-maps.github.io/Słubice_Ideology" target="_blank">Słubice <i>(Ideology)</i></a><br>
+
+<br>
+<h5>For a more detailed description of the methodology applied for the classification of street name changes and processes, please see the following open access article:
+<br>
+Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2021. Ideology in the linguistic landscape: Towards a quantitative approach. <i>Discourse & Society.</i> 32(4):405-425 <a href="https://journals.sagepub.com/doi/10.1177/0957926521992149" target="_blank">doi:10.1177/0957926521992149</a>
+</h5>
