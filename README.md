@@ -39,8 +39,8 @@ Streets named as a result of these two non-ideological processes are coloured bl
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Ideology" target="_blank">Frankfurt an der Oder <i>(Ideology by period)</i></a><br>
   <a href="https://mill-maps.github.io/Słubice_Ideology" target="_blank">Słubice <i>(Ideology)</i></a><br>
 
-<br>
-<h5>For a more detailed description of the methodology applied for the classification of street name changes and processes, please see the following open access article:
+<font size="3">
+For a more detailed description of the methodology applied for the classification of street name changes and processes, please see the following open access article:
 <br>
 Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2021. Ideology in the linguistic landscape: Towards a quantitative approach. <i>Discourse & Society.</i> 32(4):405-425 <a href="https://journals.sagepub.com/doi/10.1177/0957926521992149" target="_blank">doi:10.1177/0957926521992149</a>
-</h5>
+</font>
