@@ -24,7 +24,6 @@ Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2
     <td><h4><a href="https://www.uni-due.de/anglistik/sociolinguistics_lab/mill_project.php" target="_blank">Germany</a></h4></td>
     <td><h4><a href="http://mill.wa.amu.edu.pl" target="_blank">Poland</a></h4></td>
   </tr>
-  <h5>
   <tr>
     <td><a href="https://mill-maps.github.io/Leipzig_July_2021_IB_BR" target="_blank">Leipzig <i>(Total changes)</i></a></td>
     <td><a href="https://mill-maps.github.io/Poznan_no_zeros_Leaflet+" target="_blank">Poznań <i>(Total changes)</i></a></td>
@@ -41,12 +40,9 @@ Fabiszak M, Buchstaller I, Brzezińska AW, Alvanides S, Griese F, Schneider C. 2
     <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz <i>(Ideology)</i></a></td>
     <td><a href="https://mill-maps.github.io/Zbąszyń_Changes_only" target="_blank">Zbąszyń <i>(Total changes)</i></a></td>
   </tr>
-  </h5>
 </table>
 
 <h4>Germany-Poland border: Frankfurt (Oder) & Słubice</h4>
-<h5>
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Changes" target="_blank">Frankfurt an der Oder <i>(All changes)</i></a><br>
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Ideology" target="_blank">Frankfurt an der Oder <i>(Ideology by period)</i></a><br>
   <a href="https://mill-maps.github.io/Słubice_Ideology" target="_blank">Słubice <i>(Ideology)</i></a><br>
-</h5>
