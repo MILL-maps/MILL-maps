@@ -31,6 +31,6 @@
 </h5>
 <p>
 <h4>Germany-Poland border: Frankfurt (Oder) & Słubice</h4>
-  <a href="https://mill-maps.github.io/Frankfurt (Oder)_Changes" target="_blank">Frankfurt (Oder) <i>(All changes)</i></a>
-  <a href="https://mill-maps.github.io/Frankfurt (Oder)_Ideology" target="_blank">Frankfurt (Oder) <i>(Ideology by period)</i></a>
-  <a href="https://mill-maps.github.io/Słubice_Ideology" target="_blank">Słubice <i>(Ideology)</i></a>
+  <a href="https://mill-maps.github.io/Frankfurt (Oder)_Changes" target="_blank">Frankfurt an der Oder <i>(All changes)</i></a><br>
+  <a href="https://mill-maps.github.io/Frankfurt (Oder)_Ideology" target="_blank">Frankfurt an der Oder <i>(Ideology by period)</i></a><br>
+  <a href="https://mill-maps.github.io/Słubice_Ideology" target="_blank">Słubice <i>(Ideology)</i></a><br>
