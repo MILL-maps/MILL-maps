@@ -1,7 +1,8 @@
 <h2>Commemorative (re)naming in Germany and Poland 1916-2018</h2>
 <font size="3">
 In the links below there are two types of maps showing: those illusttrating <i>total number of changes</i> and those illusttrating <i>changes in ideology</i>.<br>
-The <i>Total changes</i> maps show how many times in the period of 1916-2018 each street was renamed. The numbers vary between 1 (named once and retained the same name throughout the period) to 7. The <i>Ideology</i> maps show if the process of (re-)naming of the street had an ideological outcome. There are three types of renaming processes which we considered as resulting in an ideological outcome, coloured <font color="red">red</font> on the maps:<br>
+The <i>Total changes</i> maps show how many times in the period of 1916-2018 each street was renamed. The numbers vary between 1 (named once and retained the same name throughout the period) to 7. The <i>Ideology</i> maps show if the process of (re-)naming of the street had an ideological outcome.<br>
+There are three types of renaming processes which we considered as resulting in an ideological outcome, coloured <font color="red">red</font> on the maps:<br>
 (1) when a street is named for the first time after an important political figure, e.g. in Annaberg-Bucholz in 1935 a new street was named after Dietrich-Eckart, a Nazi ideologue.<br>
 (2) when one ideologically loaded name is replaced by another, e.g.  in Zbąszyń, Bismarckstrasse (named after the German chancellor) was replaced by  Zygmunt (Polish king) in 1920 and again in 1945.<br>
 (3) when a street with non-ideological name is replaced with an ideological name, e.g. when in Zbąszyń in 1970 ulica Sportowa (Sport’s Street) was changed to ulica Walki Młodych (Union of Youth Struggle Street, named after a communist youth organisation).<br>
