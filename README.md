@@ -6,11 +6,13 @@ The <i>Total changes</i> maps show how many times in the period of 1916-2018 eac
 (2) when one ideologically loaded name is replaced by another, e.g.  in Zbąszyń, Bismarckstrasse (named after the German chancellor) was replaced by  Zygmunt (Polish king) in 1920 and again in 1945.<br>
 (3) when a street with non-ideological name is replaced with an ideological name, e.g. when in Zbąszyń in 1970 ulica Sportowa (Sport’s Street) was changed to ulica Walki Młodych (Union of Youth Struggle Street, named after a communist youth organisation).<br>
 <br>
-Two types of naming processes were considered as non-ideological in outcome:<br>
-(1) when a new street was named with a non-ideological name, e.g. in Zbąszyń in 1966 a new street was named Szeroka (Broad Street).<br>
-(2) when one non-ideological name was replaced with another non-ideological name, e.g. in Annaberg-Bucholz in 1996 a part of Hohe Staße (High Street) was renamed Ritterspornweg (Larkspur Way). The renaming was motivated by a desire to avoid confusion caused by the fact that two branches of the Y-shaped street carried the same name.<br>
-Streets named as a result of these two non-ideological processes are coloured <font color="blue">blue</font> on the maps.<br>
-<br>
+Three types of naming processes were considered as non-ideological in outcome:
+<ol>
+  <li>when a new street was named with a non-ideological name, e.g. in Zbąszyń in 1966 a new street was named Szeroka (Broad Street)</li>
+  <li>when one non-ideological name was replaced with another non-ideological name, e.g. in Annaberg-Bucholz in 1996 a part of Hohe Staße (High Street) was renamed Ritterspornweg (Larkspur Way). The renaming was motivated by a desire to avoid confusion caused by the fact that two branches of the Y-shaped street carried the same name</li>
+  <li>when an undesired ideological name is purged from the city landscape and replaced with a non-ideological name, e.g. in Annaberg-Bucholz in 1945 Horst Wessel-Straße (a Nazi martyr) was renamed Rosenweg (Rose Street)</li><br>
+Streets named as a result of these three non-ideological processes are coloured <font color="blue">blue</font> on the maps.
+</ol>
 </font>
 
 <table style="width:200%">
