@@ -6,9 +6,9 @@ In the links below there are two types of maps showing: those illusttrating <i>t
     There are three types of renaming processes which we considered as resulting in an ideological outcome, coloured <font color="red">red</font> on the maps:
   </font>
 <ol>
-  <li>when a street is named for the first time after an important political figure, e.g. in Annaberg-Bucholz in 1935 a new street was named after Dietrich-Eckart, a Nazi ideologue
-  <li>when one ideologically loaded name is replaced by another, e.g.  in Zbąszyń, Bismarckstrasse (named after the German chancellor) was replaced by  Zygmunt (Polish king) in 1920 and again in 1945
-  <li>when a street with non-ideological name is replaced with an ideological name, e.g. when in Zbąszyń in 1970 ulica Sportowa (Sport’s Street) was changed to ulica Walki Młodych (Union of Youth Struggle Street, named after a communist youth organisation).
+  <li>when a street is named for the first time after an important political figure, e.g. in Annaberg-Bucholz in 1935 a new street was named after Dietrich-Eckart, a Nazi ideologue</li>
+  <li>when one ideologically loaded name is replaced by another, e.g.  in Zbąszyń, Bismarckstrasse (named after the German chancellor) was replaced by  Zygmunt (Polish king) in 1920 and again in 1945</li>
+  <li>when a street with non-ideological name is replaced with an ideological name, e.g. when in Zbąszyń in 1970 ulica Sportowa (Sport’s Street) was changed to ulica Walki Młodych (Union of Youth Struggle Street, named after a communist youth organisation)</li>
 </ol>
   <font color="blue">
     Three types of naming processes were considered as non-ideological in outcome and the streets named as a result of these processes are coloured <font color="blue">blue</font> on the maps:
