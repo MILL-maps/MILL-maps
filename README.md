@@ -34,8 +34,8 @@ In the links below there are two types of maps showing: those illusttrating <i>t
     <td><a href="https://mill-maps.github.io/Poznań Changes 4P periods" target="_blank">Poznań <i>(Ideology: 4 Polish periods)</i></a></td>
   </tr>
   <tr>
-    <td><a href="https://mill-maps.github.io/Leipzig_Ideology" target="_blank">Leipzig <i>(Ideology: 4 German periods)</i></a></td>
-    <td>Poznań <i>(Ideology: 9 Polish periods) PLACEHOLDER</i></td>
+    <td></td>
+    <td><a href="https://mill-maps.github.io/Poznań 9 periods IdeoTrans (Leaflet)" target="_blank">Poznań <i>(Ideology: 9 Polish periods)</i></a></td>
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz <i>(Ideology)</i></a></td>
