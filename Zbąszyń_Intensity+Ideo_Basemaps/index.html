@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
+        <script src="data/ZbszyPopups_5.js"></script>
+        <script src="data/ZbszyIntensity_6.js"></script>
+        <script src="data/ZbszySumChanges_7.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:26, minZoom:6
+        }).fitBounds([[52.250265475334245,15.908649844561285],[52.25889399577608,15.93291708117297]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_StamenTonerLite_0');
+        map.getPane('pane_StamenTonerLite_0').style.zIndex = 400;
+        var layer_StamenTonerLite_0 = L.tileLayer('http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+            pane: 'pane_StamenTonerLite_0',
+            opacity: 1.0,
+            attribution: '<a href="http://maps.stamen.com/">Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL</a>',
+            minZoom: 6,
+            maxZoom: 26,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_StamenTonerLite_0;
+        map.addLayer(layer_StamenTonerLite_0);
+        map.createPane('pane_StamenToner_1');
+        map.getPane('pane_StamenToner_1').style.zIndex = 401;
+        var layer_StamenToner_1 = L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+            pane: 'pane_StamenToner_1',
+            opacity: 1.0,
+            attribution: '<a href="http://maps.stamen.com/">Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL</a>',
+            minZoom: 6,
+            maxZoom: 26,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_StamenToner_1;
+        map.addLayer(layer_StamenToner_1);
+        map.createPane('pane_OpenStreetMapmonochrome_2');
+        map.getPane('pane_OpenStreetMapmonochrome_2').style.zIndex = 402;
+        var layer_OpenStreetMapmonochrome_2 = L.tileLayer('http://a.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+            pane: 'pane_OpenStreetMapmonochrome_2',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 6,
+            maxZoom: 26,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_OpenStreetMapmonochrome_2;
+        map.addLayer(layer_OpenStreetMapmonochrome_2);
+        map.createPane('pane_OSMHumanitarian_3');
+        map.getPane('pane_OSMHumanitarian_3').style.zIndex = 403;
+        var layer_OSMHumanitarian_3 = L.tileLayer('http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMHumanitarian_3',
+            opacity: 1.0,
+            attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 6,
+            maxZoom: 26,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OSMHumanitarian_3;
+        map.addLayer(layer_OSMHumanitarian_3);
+        map.createPane('pane_OSMStandard_4');
+        map.getPane('pane_OSMStandard_4').style.zIndex = 404;
+        var layer_OSMStandard_4 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMStandard_4',
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 6,
+            maxZoom: 26,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OSMStandard_4;
+        map.addLayer(layer_OSMStandard_4);
+        function pop_ZbszyPopups_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>name</strong><br />' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">maxspeed</th>\
+                        <td>' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">c4_1989_90</th>\
+                        <td>' + (feature.properties['c4_1989_90'] !== null ? autolinker.link(feature.properties['c4_1989_90'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Intensity</th>\
+                        <td>' + (feature.properties['Intensity'] !== null ? autolinker.link(feature.properties['Intensity'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>map_name</strong><br />' + (feature.properties['map_name'] !== null ? autolinker.link(feature.properties['map_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Zbąszyń_2018</strong><br />' + (feature.properties['Zbąszyń_2018'] !== null ? autolinker.link(feature.properties['Zbąszyń_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_Sum_Change</th>\
+                        <td>' + (feature.properties['Zbąszyń_Sum_Change'] !== null ? autolinker.link(feature.properties['Zbąszyń_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_1920-1938</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_1920-1938'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_1920-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_1939-1944</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_1939-1944'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_1945-1989</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_1945-1989'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_1945-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_1990-2018</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_1990-2018'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_1990-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_Sum</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_Sum'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_1920-1938</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_1920-1938'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_1920-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_1939-1944</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_1939-1944'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_1945-1989</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_1945-1989'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_1945-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_1990-2018</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_1990-2018'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_1990-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_Sum</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_Sum'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ZbszyPopups_5_0() {
+            return {
+                pane: 'pane_ZbszyPopups_5',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ZbszyPopups_5');
+        map.getPane('pane_ZbszyPopups_5').style.zIndex = 405;
+        map.getPane('pane_ZbszyPopups_5').style['mix-blend-mode'] = 'normal';
+        var layer_ZbszyPopups_5 = new L.geoJson(json_ZbszyPopups_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ZbszyPopups_5',
+            layerName: 'layer_ZbszyPopups_5',
+            pane: 'pane_ZbszyPopups_5',
+            onEachFeature: pop_ZbszyPopups_5,
+            style: style_ZbszyPopups_5_0,
+        });
+        bounds_group.addLayer(layer_ZbszyPopups_5);
+        map.addLayer(layer_ZbszyPopups_5);
+        function pop_ZbszyIntensity_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>name</strong><br />' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['c4_1989_90'] !== null ? autolinker.link(feature.properties['c4_1989_90'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Intensity</th>\
+                        <td>' + (feature.properties['Intensity'] !== null ? autolinker.link(feature.properties['Intensity'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">map_name</th>\
+                        <td>' + (feature.properties['map_name'] !== null ? autolinker.link(feature.properties['map_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ZbszyIntensity_6_0(feature) {
+            switch(String(feature.properties['Intensity'])) {
+                default:
+                    return {
+                pane: 'pane_ZbszyIntensity_6',
+                opacity: 1,
+                color: 'rgba(203,203,203,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_ZbszyIntensity_6',
+                opacity: 1,
+                color: 'rgba(250,193,39,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_ZbszyIntensity_6',
+                opacity: 1,
+                color: 'rgba(245,125,21,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_ZbszyIntensity_6',
+                opacity: 1,
+                color: 'rgba(212,72,66,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_ZbszyIntensity_6',
+                opacity: 1,
+                color: 'rgba(159,42,99,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_ZbszyIntensity_6',
+                opacity: 1,
+                color: 'rgba(102,21,110,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '6':
+                    return {
+                pane: 'pane_ZbszyIntensity_6',
+                opacity: 1,
+                color: 'rgba(41,11,84,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '7':
+                    return {
+                pane: 'pane_ZbszyIntensity_6',
+                opacity: 1,
+                color: 'rgba(0,0,4,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 5.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_ZbszyIntensity_6');
+        map.getPane('pane_ZbszyIntensity_6').style.zIndex = 406;
+        map.getPane('pane_ZbszyIntensity_6').style['mix-blend-mode'] = 'normal';
+        var layer_ZbszyIntensity_6 = new L.geoJson(json_ZbszyIntensity_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ZbszyIntensity_6',
+            layerName: 'layer_ZbszyIntensity_6',
+            pane: 'pane_ZbszyIntensity_6',
+            onEachFeature: pop_ZbszyIntensity_6,
+            style: style_ZbszyIntensity_6_0,
+        });
+        bounds_group.addLayer(layer_ZbszyIntensity_6);
+        map.addLayer(layer_ZbszyIntensity_6);
+        function pop_ZbszySumChanges_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>name</strong><br />' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">maxspeed</th>\
+                        <td>' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">c4_1989_90</th>\
+                        <td>' + (feature.properties['c4_1989_90'] !== null ? autolinker.link(feature.properties['c4_1989_90'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Intensity</th>\
+                        <td>' + (feature.properties['Intensity'] !== null ? autolinker.link(feature.properties['Intensity'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">map_name</th>\
+                        <td>' + (feature.properties['map_name'] !== null ? autolinker.link(feature.properties['map_name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Zbąszyń_2018</strong><br />' + (feature.properties['Zbąszyń_2018'] !== null ? autolinker.link(feature.properties['Zbąszyń_2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_Sum_Change</th>\
+                        <td>' + (feature.properties['Zbąszyń_Sum_Change'] !== null ? autolinker.link(feature.properties['Zbąszyń_Sum_Change'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_1920-1938</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_1920-1938'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_1920-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_1939-1944</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_1939-1944'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_1945-1989</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_1945-1989'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_1945-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_1990-2018</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_1990-2018'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_1990-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_ide_Sum</th>\
+                        <td>' + (feature.properties['Zbąszyń_ide_Sum'] !== null ? autolinker.link(feature.properties['Zbąszyń_ide_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_1920-1938</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_1920-1938'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_1920-1938'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_1939-1944</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_1939-1944'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_1939-1944'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_1945-1989</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_1945-1989'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_1945-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_1990-2018</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_1990-2018'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_1990-2018'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Zbąszyń_non_Sum</th>\
+                        <td>' + (feature.properties['Zbąszyń_non_Sum'] !== null ? autolinker.link(feature.properties['Zbąszyń_non_Sum'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ZbszySumChanges_7_0(feature) {
+            switch(String(feature.properties['Zbąszyń_Sum_Change'])) {
+                case '0':
+                    return {
+                pane: 'pane_ZbszySumChanges_7',
+                opacity: 1,
+                color: 'rgba(203,203,203,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_ZbszySumChanges_7',
+                opacity: 1,
+                color: 'rgba(250,193,39,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_ZbszySumChanges_7',
+                opacity: 1,
+                color: 'rgba(245,125,21,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_ZbszySumChanges_7',
+                opacity: 1,
+                color: 'rgba(212,72,66,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_ZbszySumChanges_7',
+                opacity: 1,
+                color: 'rgba(159,42,99,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_ZbszySumChanges_7',
+                opacity: 1,
+                color: 'rgba(0,0,4,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_ZbszySumChanges_7');
+        map.getPane('pane_ZbszySumChanges_7').style.zIndex = 407;
+        map.getPane('pane_ZbszySumChanges_7').style['mix-blend-mode'] = 'normal';
+        var layer_ZbszySumChanges_7 = new L.geoJson(json_ZbszySumChanges_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ZbszySumChanges_7',
+            layerName: 'layer_ZbszySumChanges_7',
+            pane: 'pane_ZbszySumChanges_7',
+            onEachFeature: pop_ZbszySumChanges_7,
+            style: style_ZbszySumChanges_7_0,
+        });
+        bounds_group.addLayer(layer_ZbszySumChanges_7);
+        map.addLayer(layer_ZbszySumChanges_7);
+        var osmGeocoder = new L.Control.Geocoder({
+            collapsed: true,
+            position: 'topleft',
+            text: 'Search',
+            title: 'Testing'
+        }).addTo(map);
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .className += ' fa fa-search';
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .title += 'Search for a place';
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'Zbąszyń Sum Changes<br /><table><tr><td style="text-align: center;"><img src="legend/ZbszySumChanges_7_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszySumChanges_7_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszySumChanges_7_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszySumChanges_7_33.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszySumChanges_7_44.png" /></td><td>4</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszySumChanges_7_5.png" /></td><td></td></tr></table>': layer_ZbszySumChanges_7,'Zbąszyń Intensity<br /><table><tr><td style="text-align: center;"><img src="legend/ZbszyIntensity_6_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszyIntensity_6_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszyIntensity_6_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszyIntensity_6_33.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszyIntensity_6_44.png" /></td><td>4</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszyIntensity_6_55.png" /></td><td>5</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszyIntensity_6_66.png" /></td><td>6</td></tr><tr><td style="text-align: center;"><img src="legend/ZbszyIntensity_6_77.png" /></td><td>7</td></tr></table>': layer_ZbszyIntensity_6,'<img src="legend/ZbszyPopups_5.png" /> Zbąszyń Popups': layer_ZbszyPopups_5,"OSM Standard": layer_OSMStandard_4,"OSM Humanitarian": layer_OSMHumanitarian_3,"OpenStreetMap monochrome": layer_OpenStreetMapmonochrome_2,"Stamen Toner": layer_StamenToner_1,"Stamen Toner Lite": layer_StamenTonerLite_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
