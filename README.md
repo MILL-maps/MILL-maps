@@ -45,6 +45,10 @@ In the links below there are two types of maps showing: those illusttrating <i>t
     <td>-</td>
     <td><a href="https://mill-maps.github.io/Zbąszyń_Intensity+Ideo" target="_blank">Zbąszyń <i>(Intensity+Ideology)</i></a></td>
   </tr>
+  <tr>
+    <td>-</td>
+    <td><a href="Zbąszyń_Intensity+Ideo_Basemaps" target="_blank">Zbąszyń <i>(Intens+Ideo+ExtraBasemaps)</i></a></td>
+  </tr>
 </table>
 <h4>Germany-Poland border: Frankfurt (Oder) & Słubice</h4>
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Changes" target="_blank">Frankfurt an der Oder <i>(All changes)</i></a><br>
