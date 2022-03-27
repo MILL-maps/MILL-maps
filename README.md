@@ -55,6 +55,7 @@ In the links below there are two types of maps showing: those illusttrating <i>t
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Ideology" target="_blank">Frankfurt an der Oder <i>(Ideology by period)</i></a><br>
   <a href="https://mill-maps.github.io/Słubice_Ideology" target="_blank">Słubice <i>(Ideology) </i> with errors to fix</a><br>
   <a href="https://mill-maps.github.io/Słubice_Changes_february_final" target="_blank">Słubice <i>(Changes) </i> for MF to check!</a><br>
+  <a href="https://mill-maps.github.io/Frankfurt_Changes_ready_FG_SA+IB" target="_blank">Frankfurt <i>(Changes) </i> for IB+SA to check!</a><br>
 
 <font size="3">
 For a more detailed description of the methodology applied for the classification of street name changes and processes, please see the following open access article:
