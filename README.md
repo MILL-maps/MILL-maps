@@ -54,10 +54,8 @@ In the links below there are two types of maps showing: those illusttrating <i>t
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Changes" target="_blank">Frankfurt an der Oder <i>(All changes)</i></a><br>
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Ideology" target="_blank">Frankfurt an der Oder <i>(Ideology by period)</i></a><br>
   <a href="https://mill-maps.github.io/Frankfurt_Changes_ready_FG_SA+IB" target="_blank">Frankfurt <i>(Changes) </i> for IB+SA to check!</a><br>
-  <a href="https://mill-maps.github.io/Frankfurt+Słubice_Changes" target="_blank">Frankfurt & Słubice <i>(Changes) </i> TESTING!</a><br>
-  <a href="https://mill-maps.github.io/Słubice_Ideology" target="_blank">Słubice <i>(Ideology) </i> from 2021</a><br>
-  <a href="https://mill-maps.github.io/Słubice_Ideology_2022_May" target="_blank">Słubice <i>(Ideology) </i> May 2022</a><br>
-  <a href="https://mill-maps.github.io/Frankfurt+Słubice_Ideology_TEST" target="_blank">Frankfurt & Słubice <i>(Ideology) </i> TEST</a><br>  
+  <a href="https://mill-maps.github.io/Frankfurt+Słubice_Ideology_THICK" target="_blank">Frankfurt & Słubice <i>(Ideology) </i> Thick lines</a><br>  
+  <a href="https://mill-maps.github.io/Frankfurt+Słubice_Ideology_thin" target="_blank">Frankfurt & Słubice <i>(Ideology) </i> Thin lines</a><br>  
 <font size="3">
 For a more detailed description of the methodology applied for the classification of street name changes and processes, please see the following open access article:
 <br>
