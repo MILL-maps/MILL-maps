@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/Frankfurtpopups_1.js"></script>
+        <script src="data/Subicepopups_2.js"></script>
+        <script src="data/FrankfurtOderNonideological19451989_3.js"></script>
+        <script src="data/FrankfurtOderIdeological19451989_4.js"></script>
+        <script src="data/FrankfurtOderNonideological19902018_5.js"></script>
+        <script src="data/FrankfurtOderIdeological19902018_6.js"></script>
+        <script src="data/SubiceTranslations19451989_7.js"></script>
+        <script src="data/SubiceNonideological19451989_8.js"></script>
+        <script src="data/SubiceIdeological19451989_9.js"></script>
+        <script src="data/SubiceNonideological19902018_10.js"></script>
+        <script src="data/SubiceIdeological19902018_11.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:20, minZoom:12
+        })
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+        }
+        map.createPane('pane_OSMStandard_0');
+        map.getPane('pane_OSMStandard_0').style.zIndex = 400;
+        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMStandard_0',
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 12,
+            maxZoom: 20,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OSMStandard_0;
+        map.addLayer(layer_OSMStandard_0);
+        function pop_Frankfurtpopups_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Frankfurtpopups_1_0() {
+            return {
+                pane: 'pane_Frankfurtpopups_1',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Frankfurtpopups_1');
+        map.getPane('pane_Frankfurtpopups_1').style.zIndex = 401;
+        map.getPane('pane_Frankfurtpopups_1').style['mix-blend-mode'] = 'normal';
+        var layer_Frankfurtpopups_1 = new L.geoJson(json_Frankfurtpopups_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Frankfurtpopups_1',
+            layerName: 'layer_Frankfurtpopups_1',
+            pane: 'pane_Frankfurtpopups_1',
+            onEachFeature: pop_Frankfurtpopups_1,
+            style: style_Frankfurtpopups_1_0,
+        });
+        bounds_group.addLayer(layer_Frankfurtpopups_1);
+        map.addLayer(layer_Frankfurtpopups_1);
+        function pop_Subicepopups_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">osm_id</th>\
+                        <td>' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">code</th>\
+                        <td>' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">fclass</th>\
+                        <td>' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Total changes</th>\
+                        <td>' + (feature.properties['1945-1989 Total changes'] !== null ? autolinker.link(feature.properties['1945-1989 Total changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Ideological</th>\
+                        <td>' + (feature.properties['1945-1989 Ideological'] !== null ? autolinker.link(feature.properties['1945-1989 Ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Non ideological</th>\
+                        <td>' + (feature.properties['1945-1989 Non ideological'] !== null ? autolinker.link(feature.properties['1945-1989 Non ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Translations</th>\
+                        <td>' + (feature.properties['1945-1989 Translations'] !== null ? autolinker.link(feature.properties['1945-1989 Translations'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1990-2018 Total changes</th>\
+                        <td>' + (feature.properties['1990-2018 Total changes'] !== null ? autolinker.link(feature.properties['1990-2018 Total changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1990-2018 Ideological</th>\
+                        <td>' + (feature.properties['1990-2018 Ideological'] !== null ? autolinker.link(feature.properties['1990-2018 Ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1990-2018 Non ideological</th>\
+                        <td>' + (feature.properties['1990-2018 Non ideological'] !== null ? autolinker.link(feature.properties['1990-2018 Non ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Subicepopups_2_0() {
+            return {
+                pane: 'pane_Subicepopups_2',
+                opacity: 1,
+                color: 'rgba(191,191,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Subicepopups_2');
+        map.getPane('pane_Subicepopups_2').style.zIndex = 402;
+        map.getPane('pane_Subicepopups_2').style['mix-blend-mode'] = 'normal';
+        var layer_Subicepopups_2 = new L.geoJson(json_Subicepopups_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Subicepopups_2',
+            layerName: 'layer_Subicepopups_2',
+            pane: 'pane_Subicepopups_2',
+            onEachFeature: pop_Subicepopups_2,
+            style: style_Subicepopups_2_0,
+        });
+        bounds_group.addLayer(layer_Subicepopups_2);
+        map.addLayer(layer_Subicepopups_2);
+        function pop_FrankfurtOderNonideological19451989_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['all_1988-1945'] !== null ? autolinker.link(feature.properties['all_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ide_1988-1945'] !== null ? autolinker.link(feature.properties['ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['non_1988-1945'] !== null ? autolinker.link(feature.properties['non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FrankfurtOderNonideological19451989_3_0(feature) {
+            switch(String(feature.properties['non_1988-1945'])) {
+                case '0':
+                    return {
+                pane: 'pane_FrankfurtOderNonideological19451989_3',
+                stroke: false,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_FrankfurtOderNonideological19451989_3',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_FrankfurtOderNonideological19451989_3',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_FrankfurtOderNonideological19451989_3',
+                opacity: 1,
+                color: 'rgba(238,61,203,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_FrankfurtOderNonideological19451989_3');
+        map.getPane('pane_FrankfurtOderNonideological19451989_3').style.zIndex = 403;
+        map.getPane('pane_FrankfurtOderNonideological19451989_3').style['mix-blend-mode'] = 'normal';
+        var layer_FrankfurtOderNonideological19451989_3 = new L.geoJson(json_FrankfurtOderNonideological19451989_3, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_FrankfurtOderNonideological19451989_3',
+            layerName: 'layer_FrankfurtOderNonideological19451989_3',
+            pane: 'pane_FrankfurtOderNonideological19451989_3',
+            onEachFeature: pop_FrankfurtOderNonideological19451989_3,
+            style: style_FrankfurtOderNonideological19451989_3_0,
+        });
+        bounds_group.addLayer(layer_FrankfurtOderNonideological19451989_3);
+        function pop_FrankfurtOderIdeological19451989_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['all_1988-1945'] !== null ? autolinker.link(feature.properties['all_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ide_1988-1945'] !== null ? autolinker.link(feature.properties['ide_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['non_1988-1945'] !== null ? autolinker.link(feature.properties['non_1988-1945'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FrankfurtOderIdeological19451989_4_0(feature) {
+            switch(String(feature.properties['ide_1988-1945'])) {
+                case '0':
+                    return {
+                pane: 'pane_FrankfurtOderIdeological19451989_4',
+                stroke: false,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_FrankfurtOderIdeological19451989_4',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_FrankfurtOderIdeological19451989_4',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_FrankfurtOderIdeological19451989_4',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_FrankfurtOderIdeological19451989_4',
+                opacity: 1,
+                color: 'rgba(238,61,203,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_FrankfurtOderIdeological19451989_4');
+        map.getPane('pane_FrankfurtOderIdeological19451989_4').style.zIndex = 404;
+        map.getPane('pane_FrankfurtOderIdeological19451989_4').style['mix-blend-mode'] = 'normal';
+        var layer_FrankfurtOderIdeological19451989_4 = new L.geoJson(json_FrankfurtOderIdeological19451989_4, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_FrankfurtOderIdeological19451989_4',
+            layerName: 'layer_FrankfurtOderIdeological19451989_4',
+            pane: 'pane_FrankfurtOderIdeological19451989_4',
+            onEachFeature: pop_FrankfurtOderIdeological19451989_4,
+            style: style_FrankfurtOderIdeological19451989_4_0,
+        });
+        bounds_group.addLayer(layer_FrankfurtOderIdeological19451989_4);
+        function pop_FrankfurtOderNonideological19902018_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['all_2018-1989'] !== null ? autolinker.link(feature.properties['all_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ide_2018-1989'] !== null ? autolinker.link(feature.properties['ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['non_2018-1989'] !== null ? autolinker.link(feature.properties['non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FrankfurtOderNonideological19902018_5_0(feature) {
+            switch(String(feature.properties['non_2018-1989'])) {
+                case '0':
+                    return {
+                pane: 'pane_FrankfurtOderNonideological19902018_5',
+                stroke: false,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_FrankfurtOderNonideological19902018_5',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_FrankfurtOderNonideological19902018_5',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_FrankfurtOderNonideological19902018_5',
+                opacity: 1,
+                color: 'rgba(238,61,203,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_FrankfurtOderNonideological19902018_5');
+        map.getPane('pane_FrankfurtOderNonideological19902018_5').style.zIndex = 405;
+        map.getPane('pane_FrankfurtOderNonideological19902018_5').style['mix-blend-mode'] = 'normal';
+        var layer_FrankfurtOderNonideological19902018_5 = new L.geoJson(json_FrankfurtOderNonideological19902018_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_FrankfurtOderNonideological19902018_5',
+            layerName: 'layer_FrankfurtOderNonideological19902018_5',
+            pane: 'pane_FrankfurtOderNonideological19902018_5',
+            onEachFeature: pop_FrankfurtOderNonideological19902018_5,
+            style: style_FrankfurtOderNonideological19902018_5_0,
+        });
+        bounds_group.addLayer(layer_FrankfurtOderNonideological19902018_5);
+        function pop_FrankfurtOderIdeological19902018_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['all_2018-1989'] !== null ? autolinker.link(feature.properties['all_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ide_2018-1989'] !== null ? autolinker.link(feature.properties['ide_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['non_2018-1989'] !== null ? autolinker.link(feature.properties['non_2018-1989'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FrankfurtOderIdeological19902018_6_0(feature) {
+            switch(String(feature.properties['ide_2018-1989'])) {
+                case '0':
+                    return {
+                pane: 'pane_FrankfurtOderIdeological19902018_6',
+                stroke: false,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_FrankfurtOderIdeological19902018_6',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_FrankfurtOderIdeological19902018_6',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_FrankfurtOderIdeological19902018_6',
+                opacity: 1,
+                color: 'rgba(238,61,203,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_FrankfurtOderIdeological19902018_6');
+        map.getPane('pane_FrankfurtOderIdeological19902018_6').style.zIndex = 406;
+        map.getPane('pane_FrankfurtOderIdeological19902018_6').style['mix-blend-mode'] = 'normal';
+        var layer_FrankfurtOderIdeological19902018_6 = new L.geoJson(json_FrankfurtOderIdeological19902018_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_FrankfurtOderIdeological19902018_6',
+            layerName: 'layer_FrankfurtOderIdeological19902018_6',
+            pane: 'pane_FrankfurtOderIdeological19902018_6',
+            onEachFeature: pop_FrankfurtOderIdeological19902018_6,
+            style: style_FrankfurtOderIdeological19902018_6_0,
+        });
+        bounds_group.addLayer(layer_FrankfurtOderIdeological19902018_6);
+        function pop_SubiceTranslations19451989_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">osm_id</th>\
+                        <td>' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">code</th>\
+                        <td>' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">fclass</th>\
+                        <td>' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Total changes</th>\
+                        <td>' + (feature.properties['1945-1989 Total changes'] !== null ? autolinker.link(feature.properties['1945-1989 Total changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Ideological</th>\
+                        <td>' + (feature.properties['1945-1989 Ideological'] !== null ? autolinker.link(feature.properties['1945-1989 Ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Non ideological</th>\
+                        <td>' + (feature.properties['1945-1989 Non ideological'] !== null ? autolinker.link(feature.properties['1945-1989 Non ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Translations</th>\
+                        <td>' + (feature.properties['1945-1989 Translations'] !== null ? autolinker.link(feature.properties['1945-1989 Translations'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_SubiceTranslations19451989_7_0(feature) {
+            switch(String(feature.properties['1945-1989 Translations'])) {
+                case '0':
+                    return {
+                pane: 'pane_SubiceTranslations19451989_7',
+                stroke: false,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_SubiceTranslations19451989_7',
+                opacity: 1,
+                color: 'rgba(51,160,44,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_SubiceTranslations19451989_7');
+        map.getPane('pane_SubiceTranslations19451989_7').style.zIndex = 407;
+        map.getPane('pane_SubiceTranslations19451989_7').style['mix-blend-mode'] = 'normal';
+        var layer_SubiceTranslations19451989_7 = new L.geoJson(json_SubiceTranslations19451989_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SubiceTranslations19451989_7',
+            layerName: 'layer_SubiceTranslations19451989_7',
+            pane: 'pane_SubiceTranslations19451989_7',
+            onEachFeature: pop_SubiceTranslations19451989_7,
+            style: style_SubiceTranslations19451989_7_0,
+        });
+        bounds_group.addLayer(layer_SubiceTranslations19451989_7);
+        function pop_SubiceNonideological19451989_8(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">osm_id</th>\
+                        <td>' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">code</th>\
+                        <td>' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">fclass</th>\
+                        <td>' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Total changes</th>\
+                        <td>' + (feature.properties['1945-1989 Total changes'] !== null ? autolinker.link(feature.properties['1945-1989 Total changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Ideological</th>\
+                        <td>' + (feature.properties['1945-1989 Ideological'] !== null ? autolinker.link(feature.properties['1945-1989 Ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Non ideological</th>\
+                        <td>' + (feature.properties['1945-1989 Non ideological'] !== null ? autolinker.link(feature.properties['1945-1989 Non ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Translations</th>\
+                        <td>' + (feature.properties['1945-1989 Translations'] !== null ? autolinker.link(feature.properties['1945-1989 Translations'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_SubiceNonideological19451989_8_0(feature) {
+            switch(String(feature.properties['1945-1989 Non ideological'])) {
+                case '0':
+                    return {
+                pane: 'pane_SubiceNonideological19451989_8',
+                stroke: false,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_SubiceNonideological19451989_8',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_SubiceNonideological19451989_8',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_SubiceNonideological19451989_8');
+        map.getPane('pane_SubiceNonideological19451989_8').style.zIndex = 408;
+        map.getPane('pane_SubiceNonideological19451989_8').style['mix-blend-mode'] = 'normal';
+        var layer_SubiceNonideological19451989_8 = new L.geoJson(json_SubiceNonideological19451989_8, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SubiceNonideological19451989_8',
+            layerName: 'layer_SubiceNonideological19451989_8',
+            pane: 'pane_SubiceNonideological19451989_8',
+            onEachFeature: pop_SubiceNonideological19451989_8,
+            style: style_SubiceNonideological19451989_8_0,
+        });
+        bounds_group.addLayer(layer_SubiceNonideological19451989_8);
+        function pop_SubiceIdeological19451989_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">osm_id</th>\
+                        <td>' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">code</th>\
+                        <td>' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">fclass</th>\
+                        <td>' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Total changes</th>\
+                        <td>' + (feature.properties['1945-1989 Total changes'] !== null ? autolinker.link(feature.properties['1945-1989 Total changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Ideological</th>\
+                        <td>' + (feature.properties['1945-1989 Ideological'] !== null ? autolinker.link(feature.properties['1945-1989 Ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Non ideological</th>\
+                        <td>' + (feature.properties['1945-1989 Non ideological'] !== null ? autolinker.link(feature.properties['1945-1989 Non ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1945-1989 Translations</th>\
+                        <td>' + (feature.properties['1945-1989 Translations'] !== null ? autolinker.link(feature.properties['1945-1989 Translations'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_SubiceIdeological19451989_9_0(feature) {
+            switch(String(feature.properties['1945-1989 Ideological'])) {
+                case '0':
+                    return {
+                pane: 'pane_SubiceIdeological19451989_9',
+                stroke: false,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_SubiceIdeological19451989_9',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_SubiceIdeological19451989_9',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_SubiceIdeological19451989_9');
+        map.getPane('pane_SubiceIdeological19451989_9').style.zIndex = 409;
+        map.getPane('pane_SubiceIdeological19451989_9').style['mix-blend-mode'] = 'normal';
+        var layer_SubiceIdeological19451989_9 = new L.geoJson(json_SubiceIdeological19451989_9, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SubiceIdeological19451989_9',
+            layerName: 'layer_SubiceIdeological19451989_9',
+            pane: 'pane_SubiceIdeological19451989_9',
+            onEachFeature: pop_SubiceIdeological19451989_9,
+            style: style_SubiceIdeological19451989_9_0,
+        });
+        bounds_group.addLayer(layer_SubiceIdeological19451989_9);
+        function pop_SubiceNonideological19902018_10(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">osm_id</th>\
+                        <td>' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">code</th>\
+                        <td>' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">fclass</th>\
+                        <td>' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1990-2018 Total changes</th>\
+                        <td>' + (feature.properties['1990-2018 Total changes'] !== null ? autolinker.link(feature.properties['1990-2018 Total changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1990-2018 Ideological</th>\
+                        <td>' + (feature.properties['1990-2018 Ideological'] !== null ? autolinker.link(feature.properties['1990-2018 Ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1990-2018 Non ideological</th>\
+                        <td>' + (feature.properties['1990-2018 Non ideological'] !== null ? autolinker.link(feature.properties['1990-2018 Non ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_SubiceNonideological19902018_10_0(feature) {
+            switch(String(feature.properties['1990-2018 Non ideological'])) {
+                case '0':
+                    return {
+                pane: 'pane_SubiceNonideological19902018_10',
+                stroke: false,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_SubiceNonideological19902018_10',
+                opacity: 1,
+                color: 'rgba(0,0,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_SubiceNonideological19902018_10');
+        map.getPane('pane_SubiceNonideological19902018_10').style.zIndex = 410;
+        map.getPane('pane_SubiceNonideological19902018_10').style['mix-blend-mode'] = 'normal';
+        var layer_SubiceNonideological19902018_10 = new L.geoJson(json_SubiceNonideological19902018_10, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SubiceNonideological19902018_10',
+            layerName: 'layer_SubiceNonideological19902018_10',
+            pane: 'pane_SubiceNonideological19902018_10',
+            onEachFeature: pop_SubiceNonideological19902018_10,
+            style: style_SubiceNonideological19902018_10_0,
+        });
+        bounds_group.addLayer(layer_SubiceNonideological19902018_10);
+        function pop_SubiceIdeological19902018_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">osm_id</th>\
+                        <td>' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">code</th>\
+                        <td>' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">fclass</th>\
+                        <td>' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">name</th>\
+                        <td>' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1990-2018 Total changes</th>\
+                        <td>' + (feature.properties['1990-2018 Total changes'] !== null ? autolinker.link(feature.properties['1990-2018 Total changes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1990-2018 Ideological</th>\
+                        <td>' + (feature.properties['1990-2018 Ideological'] !== null ? autolinker.link(feature.properties['1990-2018 Ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">1990-2018 Non ideological</th>\
+                        <td>' + (feature.properties['1990-2018 Non ideological'] !== null ? autolinker.link(feature.properties['1990-2018 Non ideological'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_SubiceIdeological19902018_11_0(feature) {
+            switch(String(feature.properties['1990-2018 Ideological'])) {
+                case '0':
+                    return {
+                pane: 'pane_SubiceIdeological19902018_11',
+                stroke: false,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_SubiceIdeological19902018_11',
+                opacity: 1,
+                color: 'rgba(227,26,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_SubiceIdeological19902018_11');
+        map.getPane('pane_SubiceIdeological19902018_11').style.zIndex = 411;
+        map.getPane('pane_SubiceIdeological19902018_11').style['mix-blend-mode'] = 'normal';
+        var layer_SubiceIdeological19902018_11 = new L.geoJson(json_SubiceIdeological19902018_11, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SubiceIdeological19902018_11',
+            layerName: 'layer_SubiceIdeological19902018_11',
+            pane: 'pane_SubiceIdeological19902018_11',
+            onEachFeature: pop_SubiceIdeological19902018_11,
+            style: style_SubiceIdeological19902018_11_0,
+        });
+        bounds_group.addLayer(layer_SubiceIdeological19902018_11);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'Słubice Ideological 1990-2018<br /><table><tr><td style="text-align: center;"><img src="legend/SubiceIdeological19902018_11_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/SubiceIdeological19902018_11_11.png" /></td><td>1</td></tr></table>': layer_SubiceIdeological19902018_11,'Słubice Non-ideological 1990-2018<br /><table><tr><td style="text-align: center;"><img src="legend/SubiceNonideological19902018_10_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/SubiceNonideological19902018_10_11.png" /></td><td>1</td></tr></table>': layer_SubiceNonideological19902018_10,'Słubice Ideological 1945-1989<br /><table><tr><td style="text-align: center;"><img src="legend/SubiceIdeological19451989_9_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/SubiceIdeological19451989_9_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/SubiceIdeological19451989_9_22.png" /></td><td>2</td></tr></table>': layer_SubiceIdeological19451989_9,'Słubice Non-ideological 1945-1989<br /><table><tr><td style="text-align: center;"><img src="legend/SubiceNonideological19451989_8_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/SubiceNonideological19451989_8_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/SubiceNonideological19451989_8_22.png" /></td><td>2</td></tr></table>': layer_SubiceNonideological19451989_8,'Słubice Translations 1945-1989<br /><table><tr><td style="text-align: center;"><img src="legend/SubiceTranslations19451989_7_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/SubiceTranslations19451989_7_11.png" /></td><td>1</td></tr></table>': layer_SubiceTranslations19451989_7,'Frankfurt (Oder) Ideological 1990-2018<br /><table><tr><td style="text-align: center;"><img src="legend/FrankfurtOderIdeological19902018_6_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderIdeological19902018_6_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderIdeological19902018_6_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderIdeological19902018_6_3.png" /></td><td></td></tr></table>': layer_FrankfurtOderIdeological19902018_6,'Frankfurt (Oder) Non-ideological 1990-2018<br /><table><tr><td style="text-align: center;"><img src="legend/FrankfurtOderNonideological19902018_5_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderNonideological19902018_5_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderNonideological19902018_5_32.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderNonideological19902018_5_3.png" /></td><td></td></tr></table>': layer_FrankfurtOderNonideological19902018_5,'Frankfurt (Oder) Ideological 1945-1989<br /><table><tr><td style="text-align: center;"><img src="legend/FrankfurtOderIdeological19451989_4_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderIdeological19451989_4_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderIdeological19451989_4_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderIdeological19451989_4_33.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderIdeological19451989_4_4.png" /></td><td></td></tr></table>': layer_FrankfurtOderIdeological19451989_4,'Frankfurt (Oder) Non-ideological 1945-1989<br /><table><tr><td style="text-align: center;"><img src="legend/FrankfurtOderNonideological19451989_3_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderNonideological19451989_3_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderNonideological19451989_3_22.png" /></td><td>2</td></tr><tr><td style="text-align: center;"><img src="legend/FrankfurtOderNonideological19451989_3_3.png" /></td><td></td></tr></table>': layer_FrankfurtOderNonideological19451989_3,'<img src="legend/Subicepopups_2.png" /> Słubice (pop ups)': layer_Subicepopups_2,'<img src="legend/Frankfurtpopups_1.png" /> Frankfurt (pop ups)': layer_Frankfurtpopups_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
