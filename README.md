@@ -39,15 +39,7 @@ In the links below there are two types of maps showing: those illusttrating <i>t
   </tr>
   <tr>
     <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz <i>(Ideology)</i></a></td>
-    <td><a href="https://mill-maps.github.io/Zbąszyń_Intensity_only" target="_blank">Zbąszyń <i>(Intensity from 2021)</i></a></td>
-  </tr>
-  <tr>
-    <td>-</td>
-    <td><a href="https://mill-maps.github.io/Zbąszyń_Intensity+Ideo" target="_blank">Zbąszyń <i>(Intensity+Ideology)</i></a></td>
-  </tr>
-  <tr>
-    <td>-</td>
-    <td><a href="Zbąszyń_Intensity+Ideo_Basemaps" target="_blank">Zbąszyń <i>(Intens+Ideo+ExtraBasemaps)</i></a></td>
+    <td><a href="https://mill-maps.github.io/Zbąszyń_Ideology_Totals=210" target="_blank">Zbąszyń <i>(Ideology totals)</i></a></td>
   </tr>
 </table>
 <h4>Germany-Poland border: Frankfurt (Oder) & Słubice</h4>
