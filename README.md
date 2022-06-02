@@ -41,6 +41,10 @@ In the links below there are two types of maps showing: those illusttrating <i>t
     <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz <i>(Ideology)</i></a></td>
     <td><a href="https://mill-maps.github.io/Zbąszyń_Ideology_Totals=210" target="_blank">Zbąszyń <i>(Ideology totals)</i></a></td>
   </tr>
+  <tr>
+    <td><a href="https://mill-maps.github.io/Annaberg-Buchholtz_ideology" target="_blank">Annaberg-Buchholz <i>(Ideology)</i></a></td>
+    <td><a href="https://mill-maps.github.io/Zbąszyń_Ideology_Periods" target="_blank">Zbąszyń <i>(Ideology 4 periods)</i></a></td>
+  </tr>
 </table>
 <h4>Germany-Poland border: Frankfurt (Oder) & Słubice</h4>
   <a href="https://mill-maps.github.io/Frankfurt (Oder)_Changes" target="_blank">Frankfurt an der Oder <i>(All changes)</i></a><br>
